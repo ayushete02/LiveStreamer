@@ -5,8 +5,10 @@ import { useAccount } from "wagmi";
 import { Chat } from "@pushprotocol/uiweb";
 
 
-export default function Home() {
-  const { address1 } = useAccount();
+export default function Home(props) {
+  // const { address1 } = useAccount();
+  var address1 = '0x7ED790A1Ac108b9A50e24f5c5E061df59e3673a7';
+
   return (
 
 
@@ -57,11 +59,12 @@ export default function Home() {
         </div>
       </main>
       <Chat
-        account={address1} //user address
-        supportAddress="0xB7h2NMAcD4B8a745e191b62BA3fcaD87229623P" //support address
-        apiKey="jVPMCRom1B.iDRMswdehJG7NpHDiECIHwYMMv6k2KzkPJscFIDyW8TtSnk4blYnGa8DIkfuacU0"
-        env="staging"
-      />
+          account="0x7ED790A1Ac108b9A50e24f5c5E061df59e3673a7" //user address
+          supportAddress="0xC76139fcB9e4952CE9Fb3183C6c3af69534233FE" //support address
+          apiKey="jVPMCRom1B.iDRMswdehJG7NpHDiECIHwYMMv6k2KzkPJscFIDyW8TtSnk4blYnGa8DIkfuacU0"
+          env="staging"
+          modalTitle='Support team'
+        />
 
     </div>
   )

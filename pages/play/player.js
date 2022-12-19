@@ -1,6 +1,7 @@
 import React from "react";
 import axios from 'axios';
 import { ethers } from "ethers";
+import { Chat } from "@pushprotocol/uiweb";
 import { Framework } from "@superfluid-finance/sdk-core";
 
 import { Layout, Row, Col, Card, Meta, Skeleton, Image, Button, Input, Popover, Typography, Space } from 'antd';
@@ -27,6 +28,7 @@ class Player extends React.Component {
       stream_key: null,
       isLoading: true,
       address: null,
+      support_Address: null,
       inputAddress: null,
       NFTMintingAddress: null,
       streamer_address: null,
@@ -90,7 +92,8 @@ class Player extends React.Component {
   setAddress = async () => {
     const accounts = await ethereum.request({ method: 'eth_accounts' });
     this.setState({
-      address: accounts[0]
+      address: accounts[0],
+      support_Address: accounts[0]
     })
   }
 
@@ -278,6 +281,7 @@ class Player extends React.Component {
       playback_url,
       stream_key,
       address,
+      support_Address,
       NFTMintingAddress,
       stream_name,
       streamer_address,
@@ -397,8 +401,18 @@ class Player extends React.Component {
             ) : <div>Loading NFT</div>}
           </Row>
         </Content>
-
+        <Chat
+          account={address} //user address
+          // We cant send message to send address so we Hardcode other address
+          // supportAddress={support_Address} //support address
+          supportAddress="0xC76139fcB9e4952CE9Fb3183C6c3af69534233FE" //support address
+          // const key = process.env.apiKey;
+          apiKey="jVPMCRom1B.iDRMswdehJG7NpHDiECIHwYMMv6k2KzkPJscFIDyW8TtSnk4blYnGa8DIkfuacU0"
+          env="staging"
+          modalTitle="Help Desk"
+        />
       </Layout>
+      
     )
   }
 }
