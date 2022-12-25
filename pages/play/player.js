@@ -1,11 +1,13 @@
 import React from "react";
 import axios from 'axios';
 import { ethers } from "ethers";
+import { LoadingOutlined } from '@ant-design/icons';
 import { Chat } from "@pushprotocol/uiweb";
 import { Framework } from "@superfluid-finance/sdk-core";
 
-import { Layout, Row, Col, Card, Meta, Skeleton, Image, Button, Input, Popover, Typography, Space } from 'antd';
+import { Layout,Spin, Row, Col, Card, Meta, Skeleton, Image, Button, Input, Popover, Typography, Space } from 'antd';
 
+import Navbar from '../../components/navbar'
 
 const { Header, Footer, Sider, Content } = Layout;
 const { Title, Text, Link } = Typography;
@@ -194,17 +196,17 @@ class Player extends React.Component {
         await axios.request(options).then(function (response) {
           console.log(response.data.image_url, "is the avatar response from opensea api");
           minter_avatar_url = response.data.image_url
-         
+
         }).catch(function (error) {
           console.error(error);
         });
       } catch (e) {
         console.log("err getting avatar")
       }
-      this.setState({minter_avatar_url: minter_avatar_url})
+      this.setState({ minter_avatar_url: minter_avatar_url })
 
       this.setMintAddress(address);
-      
+
 
     }
     await this.getGeneratedNFTImage()
@@ -309,112 +311,143 @@ class Player extends React.Component {
     }
 
     return (
-      <Layout>
-        <Header>Header</Header>
-        <Content style={{ padding: "40px" }}>
-          <Row>
-            <Col span={18}>
-              <div className="relative bg-black h-56 lg:h-96 w-full xl:w-3/5 overflow-hidden">
-                <div data-vjs-player>
-                  {playback_url ? (
-                    <>
-                      <VideoJS options={videoJsOptions} onReady={this.handlePlayerReady} />
-                      <br />
-                      <Title level={1}>{stream_name}</Title>
-                      <Title level={5}>By: {streamer_address}</Title>
+      <>
+      <Navbar/>
+        <Layout>
+         
+          <Content style={{ padding: "40px" }}>
+            <Row>
+              <Col span={16}>
+                <div className=" relative bg-black h-56 lg:h-1/2 border-8 border-solid rounded-t-lg  border-white m-auto w-full xl:w-10/12  overflow-hidden">
+                  <div data-vjs-player className=" px-200">
+                    {playback_url ? (
+                      <>
+                        <VideoJS options={videoJsOptions} onReady={this.handlePlayerReady} />
+                        <br />
+                        <Title level={1}>{stream_name}</Title>
+                        <Title level={5}>By: {streamer_address}</Title>
 
-                    </>
-                  ) : <div>Loading...</div>}
-                </div>
-              </div>
-            </Col>
-            {/* {ipfsResponse} */}
-
-            {!isLoading ? (
-              <Col span={4} offset={1}>
-                <Image
-                  width={250}
-                  src={nft_image}
-                />
-
-                <div>
-
-                  <Text strong>{nft_name}  </Text> <Text mark>{nft_symbol}</Text>
-                  <br />
-                  <Text type="secondary">{nft_description}</Text>
-                  <br />
-                </div>
-                <br />
-                {address ?
-                  <Button onClick={this.setConnectedWalletAddressAsMintAddress} type="primary" size="large" block ghost>Select {address.substring(0, 7)} </Button> :
-                  <div>
-                    <Button onClick={this.connectWallet} type="primary" size="large" block>Connect Wallet</Button>
-
+                      </>
+                    ) : <div><LoadingOutlined
+                    style={{
+                      fontSize: 24,
+                    }}
+                    spin
+                  /></div>}
                   </div>
-
-                }
-
-                <br />
-                <Space direction="horizontal" style={{ width: '100%', justifyContent: 'center' }}>
-
-                  or
-                </Space>
-                <br />
-
-                <Input.Group compact>
-                  <Input style={{ width: 'calc(100% - 80px)' }} placeholder="Enter address or ens" name="address" onChange={this.handleInputChange} />
-                  <Button type="primary" onClick={this.onAddingAddress}>Submit</Button>
-                </Input.Group>
-                <br />
-                <br />
-                <div>
-                  <Space direction="horizontal" style={{ width: '100%', justifyContent: 'center', padding: "5px" }}>
-                    <Text strong>
-                      <Image
-                      src={minter_avatar_url}
-                      />
-
-                      {NFTMintingAddress ? `Mint NFT at  ${NFTMintingAddress.substring(0, 7)}` : "Select address to mint NFT"}
-                    </Text>
-
-                  </Space>
                 </div>
-                <Popover content="Minting without gas in Polygon Network using NFTPort." title="Gasless NFT Minting">
-                  <Button
-                    type="primary"
-                    size="large"
-                    block
-                  onClick={this.mintNFTPort}
-                  >Mint NFT without Gas</Button>
-                </Popover>
-                <br />
-                <br />
-                <Popover content="Subscribe via Superfluid" title="Subscribe">
-                  <Button
-                    type="primary"
-                    size="large"
-                    block
-                    onClick={this.createFlow}
-                  >Subscribe 5 DAI / Month</Button>
-                </Popover>
+                <div className="relative h-56  m-auto w-full xl:w-10/12 overflow-hidden">
+                <Card title={nft_name} bordered={false} style={{ width: '100%' }}>
+                  Desc : {nft_description}<br />
+                  Symbol : {nft_symbol}<br />
+    </Card>
+
+                </div>
               </Col>
-            ) : <div>Loading NFT</div>}
-          </Row>
-        </Content>
-        <Chat
-          account={address} //user address
-          // We cant send message to send address so we Hardcode other address
-          // supportAddress={support_Address} //support address
-          supportAddress="0xC76139fcB9e4952CE9Fb3183C6c3af69534233FE" //support address
-          // const key = process.env.apiKey;
-          apiKey="jVPMCRom1B.iDRMswdehJG7NpHDiECIHwYMMv6k2KzkPJscFIDyW8TtSnk4blYnGa8DIkfuacU0"
-          env="staging"
-          modalTitle="Help Desk"
-        />
-      </Layout>
-      
-    )
+              {/* {ipfsResponse} */}
+
+              {!isLoading ? (
+                <>
+                <Col span={6} offset={1}>
+                  <div className='mr-10 w-full border-8 border-solid rounded-lg  border-white bg-white'>
+
+                  <Image
+                    width={'100%'}
+                    src={nft_image}
+                  />
+
+                  <div>
+
+                    <Text strong>{nft_name}  </Text> <Text mark>{nft_symbol}</Text>
+                    <br />
+                    <Text type="secondary">{nft_description}</Text>
+                    <br />
+                  </div>
+                  <br />
+                  {address ?
+                    <Button onClick={this.setConnectedWalletAddressAsMintAddress} type="button"
+                    class="w-full items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600" size="large" block >Select {address.substring(0, 7)} </Button> :
+                    <div>
+                      <Button onClick={this.connectWallet} type="button"
+                    class="w-full items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600" size="large" block>Connect Wallet</Button>
+
+                    </div>
+
+}
+
+                  <br />
+                  <Space direction="horizontal" style={{ width: '100%', justifyContent: 'center' }}>
+
+                    or
+                  </Space>
+                  <br />
+
+                  <Input.Group compact>
+                    <Input style={{ width: 'calc(100% - 80px)' }} placeholder="Enter address or ens" name="address" onChange={this.handleInputChange} />
+                    <Button type="button"
+                    class="w-full items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600" onClick={this.onAddingAddress}>Submit</Button>
+                  </Input.Group>
+                  <br />
+                  <br />
+                  <div>
+                    <Space direction="horizontal" style={{ width: '100%', justifyContent: 'center', padding: "5px" }}>
+                      <Text strong>
+                        <Image
+                          src={minter_avatar_url}
+                        />
+
+                        {NFTMintingAddress ? `Mint NFT at  ${NFTMintingAddress.substring(0, 7)}` : "Select address to mint NFT"}
+                      </Text>
+
+                    </Space>
+                  </div>
+                  <Popover content="Minting without gas in Polygon Network using NFTPort." title="Gasless NFT Minting">
+                    <Button
+                      
+                      size="large"
+                      block
+                      type="button"
+                    class="w-full items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
+                      onClick={this.mintNFTPort}
+                    >Mint NFT without Gas</Button>
+                  </Popover>
+                  <br />
+                  <br />
+                  <Popover content="Subscribe via Superfluid" title="Subscribe">
+                    <Button
+                      type="button"
+                      class="w-full items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
+                      size="large"
+                      block
+                      onClick={this.createFlow}
+                    >Subscribe 5 DAI / Month</Button>
+                  </Popover>
+              </div>
+                </Col>
+                </>
+              ) : <div><LoadingOutlined
+              style={{
+                fontSize: 24,
+              }}
+              spin
+            /></div>}
+            </Row>
+          </Content>
+          <Chat
+            account={address} //user address
+            // We cant send message to send address so we Hardcode other address
+            // supportAddress={support_Address} //support address
+            supportAddress="0xC76139fcB9e4952CE9Fb3183C6c3af69534233FE" //support address
+            // const key = process.env.apiKey;
+            apiKey="jVPMCRom1B.iDRMswdehJG7NpHDiECIHwYMMv6k2KzkPJscFIDyW8TtSnk4blYnGa8DIkfuacU0"
+            env="staging"
+            modalTitle="Help Desk"
+          />
+        </Layout>
+        </>
+        );
+    
   }
 }
 
-export default Player;
+        export default Player;

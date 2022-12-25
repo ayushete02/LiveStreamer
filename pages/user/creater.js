@@ -1,17 +1,37 @@
-
-import { Button, Layout, Menu, Breadcrumb, Row, Col, Input, notification, Space, Card, Typography } from 'antd';
-import { EditOutlined, EllipsisOutlined, PlayCircleOutlined, CopyOutlined } from '@ant-design/icons';
+import {
+  Button,
+  Result,
+  Layout,
+  Menu,
+  Breadcrumb,
+  Row,
+  Col,
+  Input,
+  notification,
+  Space,
+  Card,
+  Typography,
+} from "antd";
+import {
+  EditOutlined,
+  SmileOutlined,
+  PlusCircleTwoTone,
+  EllipsisOutlined,
+  PlayCircleOutlined,
+  CopyOutlined,
+} from "@ant-design/icons";
 
 const { Header, Content, Footer } = Layout;
 const { Title, Text, Link } = Typography;
 const { Meta } = Card;
 
-import React from 'react'
-import axios from 'axios'
+import React from "react";
+import axios from "axios";
 
-import Nftmodal from '../../components/nftmodal';
-import Item from 'antd/lib/list/Item';
-import Mintnft from '../../components/mintnft';
+import Nftmodal from "../../components/nftmodal";
+import Navbar from "../../components/navbar";
+import Item from "antd/lib/list/Item";
+import Mintnft from "../../components/mintnft";
 
 class Creater extends React.Component {
   constructor(props) {
@@ -61,101 +81,106 @@ class Creater extends React.Component {
         //   playback_url: "https://cdn.livepeer.com/hls/3a8dsveuy8dc3fxi/index.m3u8",
         //   active: true
         // },
-        // {
-        //   stream_name: "Stream Name",
-        //   ipfsHash: "QmSFD715swS5AqTxU1nJBHZisxtuSD18ygRE4ix9UBbjiU",
-        //   nft_image: "https://ipfs.io/ipfs/QmW93a1P5ADoUmjtjnCnrmuDHmKM9M9xEPFJbtG2hAVzSG",
-        //   ingest_url: "rtmp://rtmp.livepeer.com/live/",
-        //   stream_key: "3a8d-vq9q-dj24-tenr",
-        //   playback_url: "https://cdn.livepeer.com/hls/3a8dsveuy8dc3fxi/index.m3u8",
-        //   active: true
-        // },
+        {
+          stream_name: "Stream Name",
+          ipfsHash: "QmSFD715swS5AqTxU1nJBHZisxtuSD18ygRE4ix9UBbjiU",
+          nft_image:
+            "https://ipfs.io/ipfs/QmW93a1P5ADoUmjtjnCnrmuDHmKM9M9xEPFJbtG2hAVzSG",
+          ingest_url: "rtmp://rtmp.livepeer.com/live/",
+          stream_key: "3a8d-vq9q-dj24-tenr",
+          playback_url:
+            "https://cdn.livepeer.com/hls/3a8dsveuy8dc3fxi/index.m3u8",
+          active: true,
+        },
       ],
-    }
+    };
   }
 
   componentDidMount() {
     this.getData();
-    this.setAddress()
+    this.setAddress();
   }
 
   getData = async () => {
     console.log("getData");
-    const NETWORK_URL = 42 // Kovan
-    const address = this.props.address
-    const NFT_NAME = "STMR"
+    const NETWORK_URL = 42; // Kovan
+    const address = this.props.address;
+    const NFT_NAME = "STMR";
 
     const options = {
-      method: 'GET',
+      method: "GET",
       url: `https://api.covalenthq.com/v1/${NETWORK_URL}/address/${address}/balances_v2/`,
-      params: { nft: 'true', key: 'ckey_7ad6e82f790247cd96a443831a3' }
+      params: { nft: "true", key: "ckey_7ad6e82f790247cd96a443831a3" },
       // params: { nft: 'true', key: process.env.NEXT_PUBLIC_COVALENT_API }
     };
 
-    const data = await axios.request(options).then(function (response) {
-      return response.data
-    }).catch(function (error) {
-      console.error(error);
-    });
+    const data = await axios
+      .request(options)
+      .then(function (response) {
+        return response.data;
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
 
-    console.log("covalent data", data)
+    console.log("covalent data", data);
 
-    const nftItems = []
-    const tokenUrls = []
+    const nftItems = [];
+    const tokenUrls = [];
 
     if (data) {
-
-      data.data.items.forEach(element => {
-        console.log(element.contract_ticker_symbol, element.nft_data)
+      data.data.items.forEach((element) => {
+        console.log(element.contract_ticker_symbol, element.nft_data);
         if (element.contract_ticker_symbol === NFT_NAME && element.nft_data) {
-          element.nft_data.forEach(nft => {
-            console.log("nft tokenurl", nft.token_url)
-            const resp = axios.get(nft.token_url)
-            tokenUrls.push(nft.token_url)
-            nftItems.push(resp)
-            //   const response = await resp.json();
-            //   console.log(response, "is the response")
+          element.nft_data.forEach((nft) => {
+            console.log("nft tokenurl", nft.token_url);
+            const resp = axios.get(nft.token_url);
+            tokenUrls.push(nft.token_url);
+            nftItems.push(resp);
+            // const response = await resp.json();
+            // console.log(response, "is the response")
 
-            //   nftItems.push({
-            //     ingest_url: response.ingest_url,
-            //     nft_description: response.nft_description,
-            //     nft_image: response.nft_image,
-            //     nft_name: response.nft_name,
-            //     nft_symbol: response.nft_symbol,
-            //     playback_url: response.playback_url,
-            //     stream_key: response.stream_key,
-            //   })
-
-          })
+            // nftItems.push({
+            //   ingest_url: response.ingest_url,
+            //   nft_description: response.nft_description,
+            //   nft_image: response.nft_image,
+            //   nft_name: response.nft_name,
+            //   nft_symbol: response.nft_symbol,
+            //   playback_url: response.playback_url,
+            //   stream_key: response.stream_key,
+            // })
+          });
         }
       });
 
-      const resps = await Promise.all(nftItems)
+      const resps = await Promise.all(nftItems);
 
-      console.log("nftItems", nftItems, resps)
+      console.log("nftItems", nftItems, resps);
 
-      const dataGot = []
-      resps.forEach(resp => {
-        const respData = resp.data
-        const ipfsHash = tokenUrls.shift()
-        dataGot.push({...respData, ipfsHash})
-      })
+      const dataGot = [];
+      resps.forEach((resp) => {
+        const respData = resp.data;
+        const ipfsHash = tokenUrls.shift();
+        dataGot.push({ ...respData, ipfsHash });
+      });
 
-      console.log(dataGot, "is the data got")
+      console.log(dataGot, "is the data got");
 
       const { cardItems } = this.state;
-      this.setState({ cardItems: dataGot })
+      this.setState({ cardItems: dataGot });
     }
-  }
-
+  };
 
   createStream = async () => {
-    console.log("NEXT_PUBLIC_LIVEPEER_API_KEY", process.env.NEXT_PUBLIC_LIVEPEER_API_KEY)
+    console.log(
+      "NEXT_PUBLIC_LIVEPEER_API_KEY",
+      process.env.NEXT_PUBLIC_LIVEPEER_API_KEY
+    );
     let response = {
       statusCode: null,
       data: null,
-      error: null
-    }
+      error: null,
+    };
 
     try {
       const createStreamResponse = await axios.post(
@@ -204,9 +229,8 @@ class Creater extends React.Component {
         this.setState({
           createStreamResponse: response,
           modalVisible: true,
-        })
+        });
       } else {
-
         response.statusCode = 500;
         response.error = "Something went wrong";
       }
@@ -220,23 +244,28 @@ class Creater extends React.Component {
       // }
       response.error = error;
       this.setState({
-        createStreamResponse: response
-      })
+        createStreamResponse: response,
+      });
     }
-  }
+  };
 
-
-  openNotificationWithIcon = type => {
+  openNotificationWithIcon = (type) => {
     notification[type]({
-      message: 'Livestream created',
-      description:
-        `Successfully created livestream view at ${this.ipfsHash}.`,
+      message: "Livestream created",
+      description: `Successfully created livestream view at ${this.ipfsHash}.`,
     });
   };
 
   onIPFSUpload = (ipfsHash, nftImage, newStreamFormBody) => {
     const { createStreamResponse } = this.state;
-    console.log("ipfsHash", ipfsHash, "nftImage", nftImage, "newStreamFormBody", newStreamFormBody);
+    console.log(
+      "ipfsHash",
+      ipfsHash,
+      "nftImage",
+      nftImage,
+      "newStreamFormBody",
+      newStreamFormBody
+    );
     const { cardItems } = this.state;
     cardItems.unshift({
       stream_name: newStreamFormBody.stream_name,
@@ -247,136 +276,199 @@ class Creater extends React.Component {
       playback_url: `https://cdn.livepeer.com/hls/${createStreamResponse.data.playbackId}/index.m3u8`,
       active: true,
       newly_added: true,
-    })
+    });
     this.setState({
       ipfsHash,
       cardItems,
-      newStreamFormBody
-    })
-    this.openNotificationWithIcon('success')
-  }
+      newStreamFormBody,
+    });
+    this.openNotificationWithIcon("success");
+  };
 
   setAddress = async () => {
-    const accounts = await ethereum.request({ method: 'eth_accounts' });
+    const accounts = await ethereum.request({ method: "eth_accounts" });
     this.setState({
-      address: accounts[0]
-    })
-  }
+      address: accounts[0],
+    });
+  };
 
   connectWallet = async () => {
-    console.log("connectWallet")
-    if (this.state.address) return null
+    console.log("connectWallet");
+    if (this.state.address) return null;
     const { ethereum } = window;
-    await ethereum.request({ method: 'eth_requestAccounts' });
+    await ethereum.request({ method: "eth_requestAccounts" });
     await this.setAddress();
-  }
+  };
 
   onMintButtonClick = () => {
-    console.log("onMintButtonClick")
+    console.log("onMintButtonClick");
     this.setState({
-      loadMintNFTComponent: true
-    })
-  }
+      loadMintNFTComponent: true,
+    });
+  };
 
   render() {
-    const { cardItems, address, loadMintNFTComponent, createStreamResponse } = this.state;
-    console.log("loadMintNFTComponent", loadMintNFTComponent)
+    const { cardItems, address, loadMintNFTComponent, createStreamResponse } =
+      this.state;
+    console.log("loadMintNFTComponent", loadMintNFTComponent);
     return (
       <>
-          <Layout>
-            <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
-              
-            </Header>
-            <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
-              {/* <Breadcrumb style={{ margin: '16px 0' }}>
-                <Breadcrumb.Item>Home</Breadcrumb.Item>
-                <Breadcrumb.Item>List</Breadcrumb.Item>
-                <Breadcrumb.Item>App</Breadcrumb.Item>
-              </Breadcrumb> */}
-              <div className="" style={{ padding: 24, minHeight: 780 }}>
+        <Navbar />
 
-                <Row>
-                  <Col span={8}>
-                    <Button
-                      type="primary"
-                      size="large"
-                      onClick={this.createStream}
-                    >
-                     👉 Start New Stream 
-                    </Button>
-                  </Col>
-                  <Col span={8} offset={8}>
-                    <Input.Group compact>
-                      {address ?
-                        <a href={`/user/${address}`} > <Button type="primary" block> {address}</Button> </a>
-                        :
-                        <Button type="primary" block onClick={this.connectWallet}>Connect wallet </Button>
-                      }
+        <Layout>
+          <Content
+            className="site-layout"
+            style={{ padding: "0 40px", marginTop: 40 }}
+          >
+              <div class="relative">
+  <div class="absolute top-0 right-5">
+                <button
+                  onClick={this.createStream}
+                  type="button"
+                  class=" px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                >
+                  Start New Stream
+                </button>
+                  
+                  </div>
+              </div>
+              <br /><br />
+         
+            <div className="" style={{ padding: 20 }}>
+              <br />
 
-                    </Input.Group>
-                  </Col>
-                </Row>
-                <br />
-            <Title level={1}>🍜 Streams you created</Title>
-
-                <Row>
-                  {cardItems.map((item, index) => {
-                    return (
-                      <Col span={5} key={index} offset={1}>
-                        <Card
-                          hoverable
-                          style={{ width: 300 }}
-                          // cover={<img alt="example" src={`${item.nft_image}`} />}
-                          cover={<img alt="example" src={`${item.nft_image}`} />}
-                          actions={[
-                            <a target="_blank" href={`/play/${item.ipfsHash.substring(21)}`} > <Button key="play" > Goto Stream </Button> </a>,
-                            item.newly_added && <Mintnft address={address} ipfsHash={item.ipfsHash.substring(21)} /> 
-                          ]}
-                        >
-                          <Meta title={item.stream_name} description={item.newly_added &&
-                            (
-                              <div>
-                                ingest url: {item.ingest_url}.
-                                <br />
-                                stream key: {item.stream_key}.
-                                <br />
-                                playback_url: {item.playback_url} 
-                              </div>
-                            )
+              {cardItems.length == 0 ? (
+                <>
+                  <Title level={1}>🍜 Streams you created</Title>
+                  <Result
+                    icon={<SmileOutlined />}
+                    title="You have no Streams, Create New!"
+                    extra={
+                      <button
+                        onClick={this.createStream}
+                        type="button"
+                        class="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                      >
+                        Start New Stream
+                      </button>
+                    }
+                  />
+                </>
+              ) : (
+                <div class="">
+                  <div class="block p-6 rounded-lg shadow-lg bg-white ">
+                  <Title level={1}>🍜 Streams you created</Title>
+                  <hr />
+                  <br />
+                    <Row color="red">
+                      {cardItems.map((item, index) => {
+                        return (
+                          <Col span={5} key={index} offset={1}>
+                            <Card
+                              hoverable
+                              style={{ width: 300 }}
+                              // cover={<img alt="example" src={`${item.nft_image}`} />}
+                              cover={
+                                <img alt="example" src={`${item.nft_image}`} />
                               }
-                             />
-                        </Card>
-                        <br />
+                              actions={[
+                                <a
+                                  target="_blank"
+                                  href={`/play/${item.ipfsHash.substring(21)}`}
+                                >
+                                  {" "}
+                                  <button   type="button"
+                  class=" px-5 py-2 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                key="play"> Go to Stream </button>{" "}
+                                </a>,
+                                item.newly_added && (
+                                  <Mintnft
+                                    address={address}
+                                    ipfsHash={item.ipfsHash.substring(21)}
+                                  />
+                                ),
+                              ]}
+                            >
+                              <Meta
+                                title={item.stream_name}
+                                description={
+                                  item.newly_added && (
+                                    <div>
+                                      ingest url: {item.ingest_url}.
+                                      <br />
+                                      stream key: {item.stream_key}.
+                                      <br />
+                                      playback_url: {item.playback_url}
+                                    </div>
+                                  )
+                                }
+                              />
+                            </Card>
+                            <br />
+                          </Col>
+                        );
+                      })}
+                    </Row>
+                  </div>
+                </div>
+              )}
+              <br /><br /><br />
 
-                      </Col>
-                    )
-                  })}
-                </Row>
+              {cardItems.length == 0 ? (<>
+              <Title level={1}>👏 Streams you were part of</Title>
+                <Result
 
-            {/* <Title level={1}>👏 Streams you were part of</Title>
-            <Row>
+                  icon={<PlusCircleTwoTone />}
+                  title="you were not part of any Streams, Add One!"
+                  extra={
+                    <button
+                      onClick={this.createStream}
+                      type="button"
+                      class="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                    >
+                      Add Stream
+                    </button>
+                  }
+                  />
+                  </>
+              ) : (
+                <div class="">
+                <div class="block p-6 rounded-lg shadow-lg bg-white ">
+              <Title level={1}>👏 Streams you were part of</Title><hr /><br />
+                <Row>
                   {cardItems.map((item, index) => {
                     return (
                       <Col span={3} key={index} offset={1}>
                         <Card
                           hoverable
                           style={{ width: 200 }}
-                          cover={<img alt="example" style={{padding:"10px"}} src={`${item.nft_image}`} />}
+                          cover={
+                            <img
+                              alt="example"
+                              style={{ padding: "10px" }}
+                              src={`${item.nft_image}`}
+                            />
+                          }
                         >
-                          <Meta title="Live Stream" description="You were part of this live stream"/>
+                          <Meta
+                            title="Live Stream"
+                            description="You were part of this live stream"
+                          />
                         </Card>
                         <br />
-
                       </Col>
-                    )
+                    );
                   })}
-                </Row> */}
-
-              </div>
-            </Content>
-            {/* <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer> */}
-          </Layout>
-
+                </Row>
+                </div>
+                </div>
+              )}
+            </div>
+          </Content>
+          <Footer style={{ textAlign: "center" }}>
+            Ant Design ©2018 Created by Ant UED
+          </Footer>
+        </Layout>
 
         {createStreamResponse && createStreamResponse.data && (
           <Nftmodal
@@ -388,8 +480,8 @@ class Creater extends React.Component {
           />
         )}
       </>
-    )
+    );
   }
 }
 
-export default Creater
+export default Creater;

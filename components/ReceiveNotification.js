@@ -9,6 +9,7 @@ const Receiver = async (props) => {
         env: 'staging'
       });
       console.log("Notifications: ", notifications);
+      return notifications;
 }
 
 export default function ReceiveNotification(props) {
