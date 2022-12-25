@@ -1,4 +1,4 @@
-# 🍜 Noodles - Streaming app
+# Streaming app
 
 ## Streamer
 
