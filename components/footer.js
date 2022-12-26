@@ -21,7 +21,7 @@ export const Footer = () => {
   const [notification, SetNotification] = useState([]);
   const NotificationReceiver = async (props) => {
     const notifications = await PushAPI.user.getFeeds({
-      user: "eip155:5:0xB78721b29c028B16ab25f4a2adE1d25fbf8B2d74", // user address in CAIP
+      user: "eip155:5:0x7ED790A1Ac108b9A50e24f5c5E061df59e3673a7", // user address in CAIP
       env: "staging",
     });
     SetNotification(notifications);
@@ -53,7 +53,7 @@ export const Footer = () => {
 
 
 
-      <Drawer title="Push Notification (0xB78721b29c028B16ab25f4a2adE1d25fbf8B2d74)" width={'700px'} placement="right" onClose={onClose} open={open}>
+      <Drawer title="Push Notification (0x7ED790A1Ac108b9A50e24f5c5E061df59e3673a7)" width={'700px'} placement="right" onClose={onClose} open={open}>
 
           {notification.map((item, index) => {
             console.log(notification);
@@ -72,7 +72,7 @@ export const Footer = () => {
 
 
       <Chat
-        account="0xB78721b29c028B16ab25f4a2adE1d25fbf8B2d74" //user address
+        account="0x7ED790A1Ac108b9A50e24f5c5E061df59e3673a7" //user address
         supportAddress="0xC76139fcB9e4952CE9Fb3183C6c3af69534233FE" //support address
         apiKey="jVPMCRom1B.iDRMswdehJG7NpHDiECIHwYMMv6k2KzkPJscFIDyW8TtSnk4blYnGa8DIkfuacU0"
         env="staging"
