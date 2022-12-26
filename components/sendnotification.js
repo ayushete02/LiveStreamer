@@ -23,8 +23,8 @@ const sendNotification = async (props) => {
         cta: "",
         img: "",
       },
-      recipients: "eip155:5:0x7ED790A1Ac108b9A50e24f5c5E061df59e3673a7", // recipient address
-      channel: "eip155:5:0x7ED790A1Ac108b9A50e24f5c5E061df59e3673a7", // your channel address
+      recipients: "eip155:5:0xB78721b29c028B16ab25f4a2adE1d25fbf8B2d74", // recipient address
+      channel: "eip155:5:0xB78721b29c028B16ab25f4a2adE1d25fbf8B2d74", // your channel address
       env: "staging",
     });
 
