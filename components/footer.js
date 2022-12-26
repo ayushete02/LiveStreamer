@@ -39,7 +39,7 @@ export const Footer = () => {
   return (
     <>
 
-      <div class="bottom-10 right-40 mr-6 cursor-pointer fixed">
+      <div class="bottom-10  z-50 right-40 mr-6 cursor-pointer fixed">
         <div onClick={showDrawer} class=" inline-flex relative h-4 w-4">
           <div class="px-5 py-7 bg-indigo-400 flex items-center justify-center text-center rounded-2xl shadow-lg">
             <div>

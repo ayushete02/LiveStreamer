@@ -1,11 +1,13 @@
 import React from "react";
 import axios from 'axios';
 import { ethers } from "ethers";
-import { LoadingOutlined } from '@ant-design/icons';
 import { Chat } from "@pushprotocol/uiweb";
 import { Framework } from "@superfluid-finance/sdk-core";
 
-import { Layout,Spin, Row, Col, Card, Meta, Skeleton, Image, Button, Input, Popover, Typography, Space } from 'antd';
+import { LoadingOutlined, EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
+
+import { Avatar, Layout, Spin, Row, Col, Card,Skeleton, Image, Button, Input, Popover, Typography, Space } from 'antd';
+const { Meta } = Card;
 
 import Navbar from '../../components/navbar'
 
@@ -13,6 +15,11 @@ const { Header, Footer, Sider, Content } = Layout;
 const { Title, Text, Link } = Typography;
 import VideoJS from '../../components/VideoJS';
 
+const gridStyle = {
+  width: '33.33%',
+  textAlign: 'center',
+  // height: '500px'
+};
 
 class Player extends React.Component {
   constructor(props) {
@@ -312,13 +319,13 @@ class Player extends React.Component {
 
     return (
       <>
-      <Navbar/>
+        <Navbar />
         <Layout>
-         
+
           <Content style={{ padding: "40px" }}>
             <Row>
               <Col span={16}>
-                <div className=" relative bg-black h-56 lg:h-1/2 border-8 border-solid rounded-t-lg  border-white m-auto w-full xl:w-10/12  overflow-hidden">
+                <div className=" relative bg-black h-56 lg:h-2/5 border-8 border-solid rounded-t-lg  border-white m-auto w-full   overflow-hidden">
                   <div data-vjs-player className=" px-200">
                     {playback_url ? (
                       <>
@@ -329,108 +336,201 @@ class Player extends React.Component {
 
                       </>
                     ) : <div><LoadingOutlined
-                    style={{
-                      fontSize: 24,
-                    }}
-                    spin
-                  /></div>}
+                      style={{
+                        fontSize: 24,
+                      }}
+                      spin
+                    /></div>}
                   </div>
                 </div>
-                <div className="relative h-56  m-auto w-full xl:w-10/12 overflow-hidden">
-                <Card title={nft_name} bordered={false} style={{ width: '100%' }}>
-                  Desc : {nft_description}<br />
-                  Symbol : {nft_symbol}<br />
-    </Card>
+                <div className="relative h-56  m-auto w-full overflow-hidden">
+                  <Card title={nft_name} bordered={false} style={{ width: '100%' }}>
+                    Desc : {nft_description}<br />
+                    Symbol : {nft_symbol}<br />
+                  </Card>
 
                 </div>
+
+                <Card title="Users Watching Stream">
+                  <Card.Grid style={gridStyle}>  <Card
+                    style={{
+                      width: '100%',
+                    }}
+                    cover={
+                      <img
+                        alt="example"
+                        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                      />
+                    }
+                    actions={[
+                      <SettingOutlined key="setting" />,
+                      <EditOutlined key="edit" />,
+                      <EllipsisOutlined key="ellipsis" />,
+                    ]}
+                  >
+                    <Meta className="p-10" 
+                      avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
+                      title="Card title"
+                      description="This is the description"
+                    />
+                  </Card></Card.Grid>
+                  <Card.Grid hoverable={false} style={gridStyle}>
+                    <Card
+                      style={{
+                        width: '100%',
+                      }}
+                      cover={
+                        <img
+                          alt="example"
+                          src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                        />
+                      }
+                      actions={[
+                        <SettingOutlined key="setting" />,
+                        <EditOutlined key="edit" />,
+                        <EllipsisOutlined key="ellipsis" />,
+                      ]}
+                    >
+                      <Meta className="p-10" 
+                        avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
+                        title="Card title"
+                        description="This is the description"
+                      />
+                    </Card>
+                  </Card.Grid>
+                  <Card.Grid style={gridStyle}>  <Card
+                    style={{
+                      width: '100%',
+                    }}
+                    cover={
+                      <img
+                        alt="example"
+                        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                      />
+                    }
+                    actions={[
+                      <SettingOutlined key="setting" />,
+                      <EditOutlined key="edit" />,
+                      <EllipsisOutlined key="ellipsis" />,
+                    ]}
+                  >
+                    <Meta className="p-10" 
+                      avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
+                      title="Card title"
+                      description="This is the description"
+                    />
+                  </Card></Card.Grid>
+
+                </Card>
+
+
               </Col>
               {/* {ipfsResponse} */}
 
               {!isLoading ? (
                 <>
-                <Col span={6} offset={1}>
-                  <div className='mr-10 w-full border-8 border-solid rounded-lg  border-white bg-white'>
+                  <Col span={6} offset={1}>
+                    <div className='mr-10 w-full border-8 border-solid rounded-lg  border-white bg-white'>
 
-                  <Image
-                    width={'100%'}
-                    src={nft_image}
-                  />
+                      <Image
+                        width={'100%'}
+                        src={nft_image}
+                      />
 
-                  <div>
+                      <div>
 
-                    <Text strong>{nft_name}  </Text> <Text mark>{nft_symbol}</Text>
-                    <br />
-                    <Text type="secondary">{nft_description}</Text>
-                    <br />
-                  </div>
-                  <br />
-                  {address ?
-                    <Button onClick={this.setConnectedWalletAddressAsMintAddress} type="button"
-                    class="w-full items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600" size="large" block >Select {address.substring(0, 7)} </Button> :
-                    <div>
-                      <Button onClick={this.connectWallet} type="button"
-                    class="w-full items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600" size="large" block>Connect Wallet</Button>
+                        <Text strong>{nft_name}  </Text> <Text mark>{nft_symbol}</Text>
+                        <br />
+                        <Text type="secondary">{nft_description}</Text>
+                        <br />
+                      </div>
+                      <br />
+                      {address ?
+                        <Button onClick={this.setConnectedWalletAddressAsMintAddress} type="button"
+                          class="w-full items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600" size="large" block >Select {address.substring(0, 7)} </Button> :
+                        <div>
+                          <Button onClick={this.connectWallet} type="button"
+                            class="w-full items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600" size="large" block>Connect Wallet</Button>
 
-                    </div>
+                        </div>
 
-}
+                      }
 
-                  <br />
-                  <Space direction="horizontal" style={{ width: '100%', justifyContent: 'center' }}>
+                      <br />
+                      <Space direction="horizontal" style={{ width: '100%', justifyContent: 'center' }}>
 
-                    or
-                  </Space>
-                  <br />
+                        or
+                      </Space>
+                      <br />
 
-                  <Input.Group compact>
-                    <Input style={{ width: 'calc(100% - 80px)' }} placeholder="Enter address or ens" name="address" onChange={this.handleInputChange} />
-                    <Button type="button"
-                    class="w-full items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600" onClick={this.onAddingAddress}>Submit</Button>
-                  </Input.Group>
-                  <br />
-                  <br />
-                  <div>
-                    <Space direction="horizontal" style={{ width: '100%', justifyContent: 'center', padding: "5px" }}>
-                      <Text strong>
-                        <Image
-                          src={minter_avatar_url}
-                        />
+                      <Input.Group compact>
+                        <Input style={{ width: 'calc(100% - 80px)' }} placeholder="Enter address or ens" name="address" onChange={this.handleInputChange} />
+                        <Button type="button"
+                          class="w-full items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600" onClick={this.onAddingAddress}>Submit</Button>
+                      </Input.Group>
+                      <div>
+                        <Space direction="horizontal" style={{ width: '100%', justifyContent: 'center', padding: "5px" }}>
+                          <Text strong>
+                            <Image
+                              src={minter_avatar_url}
+                            />
 
-                        {NFTMintingAddress ? `Mint NFT at  ${NFTMintingAddress.substring(0, 7)}` : "Select address to mint NFT"}
-                      </Text>
+                            {NFTMintingAddress ? `Mint NFT at  ${NFTMintingAddress.substring(0, 7)}` : "Select address to mint NFT"}
+                          </Text>
 
-                    </Space>
-                  </div>
-                  <Popover content="Minting without gas in Polygon Network using NFTPort." title="Gasless NFT Minting">
-                    <Button
-                      
-                      size="large"
-                      block
-                      type="button"
-                    class="w-full items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
-                      onClick={this.mintNFTPort}
-                    >Mint NFT without Gas</Button>
-                  </Popover>
-                  <br />
-                  <br />
-                  <Popover content="Subscribe via Superfluid" title="Subscribe">
-                    <Button
-                      type="button"
-                      class="w-full items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
-                      size="large"
-                      block
-                      onClick={this.createFlow}
-                    >Subscribe 5 DAI / Month</Button>
-                  </Popover>
-              </div>
-                </Col>
+                        </Space>
+                      </div>
+                      <br />
+                      <br />
+</div>
+                      <div className='mt-10 mr-10 w-full border-8 border-solid rounded-lg  border-white bg-white'>
+                      <Popover content="Minting without gas in Polygon Network using NFTPort." title="Gasless NFT Minting">
+                        <Button
+
+                          size="large"
+                          block
+                          type="button"
+                          class="w-full items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
+                          onClick={this.mintNFTPort}
+                        >Mint NFT without Gas</Button>
+                      </Popover>
+                      <br />
+                      <br />
+                      <Popover content="Subscribe via Superfluid" title="Subscribe">
+                        <Button
+                          type="button"
+                          class="w-full items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
+                          size="large"
+                          block
+                          onClick={this.createFlow}
+                        >Subscribe 5 DAI / Month</Button>
+                      </Popover>
+                      </div>
+                      <div className='mt-10 mr-10 w-full border-8 border-solid rounded-lg  border-white bg-white'>
+
+                      <Card title="Minted Streams">
+    <Card type="inner" className="rounded-md" title="Inner Card title" extra={<a href="#">More</a>}>
+      Inner Card content
+    </Card>
+    <Card type="inner"  className="mt-4 rounded-md"  title="Inner Card title" extra={<a href="#">More</a>}>
+      Inner Card content
+    </Card>
+    <Card type="inner"  className="mt-4 rounded-md"  title="Inner Card title" extra={<a href="#">More</a>}>
+      Inner Card content
+    </Card>
+
+   
+  </Card>
+
+                        </div>
+                  </Col>
                 </>
               ) : <div><LoadingOutlined
-              style={{
-                fontSize: 24,
-              }}
-              spin
-            /></div>}
+                style={{
+                  fontSize: 24,
+                }}
+                spin
+              /></div>}
             </Row>
           </Content>
           <Chat
@@ -444,10 +544,10 @@ class Player extends React.Component {
             modalTitle="Help Desk"
           />
         </Layout>
-        </>
-        );
-    
+      </>
+    );
+
   }
 }
 
-        export default Player;
+export default Player;
