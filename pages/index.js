@@ -9,6 +9,7 @@ import { Chat } from "@pushprotocol/uiweb";
 export default function Home(props) {
   // const { address1 } = useAccount();
   var address1 = '0x7ED790A1Ac108b9A50e24f5c5E061df59e3673a7';
+ 
 
   return (
 

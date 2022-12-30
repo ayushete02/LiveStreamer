@@ -4,16 +4,18 @@ import { ethers } from "ethers";
 import { Chat } from "@pushprotocol/uiweb";
 import { Framework } from "@superfluid-finance/sdk-core";
 
-import { LoadingOutlined, EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
+import { LoadingOutlined,PlusCircleTwoTone ,WechatOutlined,VideoCameraOutlined, EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
 
-import { Avatar, Layout, Spin, Row, Col, Card,Skeleton, Image, Button, Input, Popover, Typography, Space } from 'antd';
+import { Avatar,Result,message, Layout, Spin, Row, Col, Card,Skeleton, Image, Button, Input, Popover, Typography, Space } from 'antd';
 const { Meta } = Card;
 
 import Navbar from '../../components/navbar'
+import LiveStream from '../../components/livestream'
 
 const { Header, Footer, Sider, Content } = Layout;
 const { Title, Text, Link } = Typography;
 import VideoJS from '../../components/VideoJS';
+import NormalChat from "../../components/normalchat";
 
 
 import {
@@ -347,6 +349,10 @@ class Player extends React.Component {
         src: playback_url
       }]
     }
+    const confirm = (e) => {
+      console.log(e);
+      message.success('Link Copied');
+    };
 
     return (
       <>
@@ -388,15 +394,16 @@ class Player extends React.Component {
                       width: '100%',
                     }}
                     cover={
-                      <img
-                        alt="example"
-                        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-                      />
+                      <LiveStream />
+
                     }
                     actions={[
-                      <SettingOutlined key="setting" />,
+                      <VideoCameraOutlined />,
                       <EditOutlined key="edit" />,
-                      <EllipsisOutlined key="ellipsis" />,
+        
+                      <Popover placement="top" className="rounded-full" content={<NormalChat/>} trigger="click">
+                      <WechatOutlined />
+                    </Popover>
                     ]}
                   >
                     <Meta className="p-10" 
@@ -405,58 +412,33 @@ class Player extends React.Component {
                       description="This is the description"
                     />
                   </Card></Card.Grid>
-                  <Card.Grid hoverable={false} style={gridStyle}>
-                    <Card
-                      style={{
-                        width: '100%',
-                      }}
-                      cover={
-                        <img
-                          alt="example"
-                          src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-                        />
-                      }
-                      actions={[
-                        <SettingOutlined key="setting" />,
-                        <EditOutlined key="edit" />,
-                        <EllipsisOutlined key="ellipsis" />,
-                      ]}
-                    >
-                      <Meta className="p-10" 
-                        avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-                        title="Card title"
-                        description="This is the description"
-                      />
-                    </Card>
+               
+                  <Card.Grid style={gridStyle}>
+                      
+                  <Result
+
+icon={<PlusCircleTwoTone />}
+
+title="Add your Firends"
+extra={
+  <button
+    onClick={confirm}
+    type="button"
+    class="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+  >
+    Share Stream
+  </button>
+}
+/>
+                      
                   </Card.Grid>
-                  <Card.Grid style={gridStyle}>  <Card
-                    style={{
-                      width: '100%',
-                    }}
-                    cover={
-                      <img
-                        alt="example"
-                        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-                      />
-                    }
-                    actions={[
-                      <SettingOutlined key="setting" />,
-                      <EditOutlined key="edit" />,
-                      <EllipsisOutlined key="ellipsis" />,
-                    ]}
-                  >
-                    <Meta className="p-10" 
-                      avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-                      title="Card title"
-                      description="This is the description"
-                    />
-                  </Card></Card.Grid>
 
                 </Card>
 
 
               </Col>
               {/* {ipfsResponse} */}
+
 
               {!isLoading ? (
                 <>
@@ -525,6 +507,7 @@ class Player extends React.Component {
                           onClick={this.mintNFTPort}
                         >Mint NFT without Gas</Button>
                       </Popover>
+
                       <br />
                       <br />
                       <Popover content="Subscribe via Superfluid" title="Subscribe">
