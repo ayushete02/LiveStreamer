@@ -15,6 +15,20 @@ const { Header, Footer, Sider, Content } = Layout;
 const { Title, Text, Link } = Typography;
 import VideoJS from '../../components/VideoJS';
 
+
+import {
+  HuddleClientProvider,
+  getHuddleClient,
+} from "@huddle01/huddle01-client";
+
+import { useHuddleStore } from "@huddle01/huddle01-client/store";
+import PeerVideoAudioElem from '../../components/PeerVideoAudioElem.tsx';
+import MeVideoElem from '../../components/MeVideoElem.tsx';
+
+
+
+
+
 const gridStyle = {
   width: '33.33%',
   textAlign: 'center',
@@ -279,6 +293,23 @@ class Player extends React.Component {
 
 
   render() {
+
+    const huddleClient = getHuddleClient("a689d3083a2a1382d5d0eeb29fb7f450e0081f10f4f21cfc5a6baa044b312463");
+
+
+  const handleJoin = async () => {
+    try {
+      await huddleClient.join(stream_key, {
+        address: address,
+        wallet: "",
+      });
+
+      console.log("joined");
+    } catch (error) {
+      console.log({ error });
+    }
+  };
+
     const { pid } = this.props;
     const {
       isLoading,

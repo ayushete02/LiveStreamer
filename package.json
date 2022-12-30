@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@huddle01/huddle01-client": "^0.0.10",
     "@mui/material": "^5.11.0",
     "@pushprotocol/uiweb": "^0.2.3",
     "@superfluid-finance/sdk-core": "^0.2.0",
