@@ -114,7 +114,12 @@ class Navbar extends React.Component {
   connectWallet = async () => {
     console.log("connectWallet");
     if (this.state.address) return null;
-    const { ethereum } = window;
+    try{
+      const { ethereum } = window;
+    }
+    catch(error){
+      console.log("User Not Login");
+    }
     await ethereum.request({ method: "eth_requestAccounts" });
     await this.setAddress();
     // return address;
