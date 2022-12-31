@@ -25,18 +25,18 @@ export default function Home(props) {
       <div class="w-full md:w-1/2 md:px-3">
         <div class="w-full pb-6 space-y-6 sm:max-w-md lg:max-w-lg md:space-y-4 lg:space-y-8 xl:space-y-9 sm:pr-5 lg:pr-0 md:pb-0">
           <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl">
-            <span class="block xl:inline">Useful Tools to</span>
-            <span class="block text-indigo-600 xl:inline">Help You Build Faster.</span>
+            <span class="block xl:inline">Live</span>
+            <span class="block text-indigo-600 xl:inline">Streamer</span>
           </h1>
-          <p class="mx-auto text-base text-gray-500 sm:max-w-md lg:text-xl md:max-w-3xl">It's never been easier to build beautiful websites that convey your message and tell your story.</p>
+          <p class="mx-auto text-base text-gray-500 sm:max-w-md lg:text-xl md:max-w-3xl">Experience the future of decentralized media with our web3 live streaming app.</p>
           <div class="relative flex flex-col sm:flex-row sm:space-x-4">
-            <a href="#_" class="flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-indigo-600 rounded-md sm:mb-0 hover:bg-indigo-700 sm:w-auto">
-              Try It Free
+            <a href="/user/address" class="flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-indigo-600 rounded-md sm:mb-0 hover:bg-indigo-700 sm:w-auto">
+              Go to Streams
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
-            <a href="#_" class="flex items-center px-6 py-3 text-gray-500 bg-gray-100 rounded-md hover:bg-gray-200 hover:text-gray-600">
+            {/* <a href="#_" class="flex items-center px-6 py-3 text-gray-500 bg-gray-100 rounded-md hover:bg-gray-200 hover:text-gray-600">
               Learn More {process.env.GREETING}
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
@@ -58,20 +58,19 @@ export default function Home(props) {
 
         <div class="box-border order-first w-full text-black border-solid md:w-1/2 md:pl-10 md:order-none">
             <h2 class="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:text-2xl">
-                Boost Productivity
+            Interact with content creators
             </h2>
             <p class="pt-4 pb-8 m-0 leading-7 text-gray-700 border-0 border-gray-300 sm:pr-12 xl:pr-32 lg:text-lg">
-                Build an atmosphere that creates productivity in your organization and your company culture.
-            </p>
+            Interact with content creators in real-time through chat and other interactive features.            </p>
             <ul class="p-0 m-0 leading-6 border-0 border-gray-300">
                 <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
-                    <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"><span class="text-sm font-bold">✓</span></span> Maximize productivity and growth
+                    <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"><span class="text-sm font-bold">✓</span></span> Enjoy your favorite content
                 </li>
                 <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
-                    <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"><span class="text-sm font-bold">✓</span></span> Speed past your competition
+                    <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"><span class="text-sm font-bold">✓</span></span> Learn top skills
                 </li>
                 <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
-                    <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"><span class="text-sm font-bold">✓</span></span> Learn the top techniques
+                    <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"><span class="text-sm font-bold">✓</span></span> Talk to the creators
                 </li>
             </ul>
         </div>
@@ -79,20 +78,19 @@ export default function Home(props) {
     <div class="box-border flex flex-col items-center content-center px-8 mx-auto mt-2 leading-6 text-black border-0 border-gray-300 border-solid md:mt-20 xl:mt-0 md:flex-row max-w-7xl lg:px-16">
 <div class="box-border w-full text-black border-solid md:w-1/2 md:pl-6 xl:pl-32">
             <h2 class="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:text-2xl">
-                Automated Tasks
+            Watch live streams
             </h2>
             <p class="pt-4 pb-8 m-0 leading-7 text-gray-700 border-0 border-gray-300 sm:pr-10 lg:text-lg">
-                Save time and money with our revolutionary services. We are the leaders in the industry.
-            </p>
+            watch live streams of events, concerts, sports, and other types of content.            </p>
             <ul class="p-0 m-0 leading-6 border-0 border-gray-300">
                 <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
-                    <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"><span class="text-sm font-bold">✓</span></span> Automated task management workflow
+                    <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"><span class="text-sm font-bold">✓</span></span> Watch recorded streams
                 </li>
                 <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
-                    <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"><span class="text-sm font-bold">✓</span></span> Detailed analytics for your data
+                    <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"><span class="text-sm font-bold">✓</span></span> Mint NFTs of Live Streams
                 </li>
                 <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
-                    <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"><span class="text-sm font-bold">✓</span></span> Some awesome integrations
+                    <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"><span class="text-sm font-bold">✓</span></span> Watch live streams
                 </li>
             </ul>
         </div>
@@ -108,20 +106,20 @@ export default function Home(props) {
     <div class="flex flex-wrap items-center -mx-3">
       <div class="order-1 w-full px-3 lg:w-1/2 lg:order-0">
         <div class="w-full lg:max-w-md">
-          <h2 class="mb-4 text-3xl font-bold leading-tight tracking-tight sm:text-4xl font-heading">Jam-packed with all the tools you need to succeed!</h2>
-          <p class="mb-4 font-medium tracking-tight text-gray-400 xl:mb-6">It's never been easier to build a business of your own. Our tools will help you with the following:</p>
+          <h2 class="mb-4 text-3xl font-bold leading-tight tracking-tight sm:text-4xl font-heading">Jam-packed with all the features you need for a seamless viewing experience!</h2>
+          <p class="mb-4 font-medium tracking-tight text-gray-400 xl:mb-6">It's never been easier to watch and interact with your favourite creators. Our app will help you with the following:</p>
           <ul>
             <li class="flex items-center py-2 space-x-4 xl:py-3">
               <svg class="w-8 h-8 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
-              <span class="font-medium text-gray-500">Faster Processing and Delivery</span>
+              <span class="font-medium text-gray-500">Seamless access to LiveStreams from anywhere</span>
             </li>
             <li class="flex items-center py-2 space-x-4 xl:py-3">
               <svg class="w-8 h-8 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
-              <span class="font-medium text-gray-500">Out of the Box Tracking and Monitoring</span>
+              <span class="font-medium text-gray-500">Monitization of content for creators</span>
             </li>
             <li class="flex items-center py-2 space-x-4 xl:py-3">
               <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-              <span class="font-medium text-gray-500">100% Protection and Security for Your App</span>
+              <span class="font-medium text-gray-500">100% Protection and Security for your identity</span>
             </li>
           </ul>
         </div>
@@ -153,10 +151,10 @@ export default function Home(props) {
                         </div>
                         <div class="flex flex-col items-start justify-center">
                             <h4 class="font-bold text-gray-800">John Doe</h4>
-                            <p class="text-gray-600">CEO of Something</p>
+                            <p class="text-gray-600">Student</p>
                         </div>
                     </div>
-                    <blockquote class="mt-8 text-lg text-gray-500">"This is a no-brainer if you want to take your business to the next level. If you are looking for the ultimate toolset, this is it!"</blockquote>
+                    <blockquote class="mt-8 text-lg text-gray-500">"This app is very easy to use and navigate, offers smooth and seamless viewing experience!"</blockquote>
                 </div>
                 <div class="flex flex-col items-start justify-start w-full h-auto px-0 mx-0 mb-12 border-l border-r border-transparent lg:w-1/3 lg:mb-0 lg:px-8 lg:mx-8 lg:border-gray-200">
                     <div class="flex items-center justify-center">
@@ -165,12 +163,11 @@ export default function Home(props) {
                         </div>
                         <div class="flex flex-col items-start justify-center">
                             <h4 class="font-bold text-gray-800">Jane Doe</h4>
-                            <p class="text-gray-600">CTO of Business</p>
+                            <p class="text-gray-600">Student</p>
                         </div>
                     </div>
-                    <blockquote class="mt-8 text-lg text-gray-500">"Thanks for creating this service. My life is so much
-                        easier.
-                        Thanks for making such a great product."</blockquote>
+                    <blockquote class="mt-8 text-lg text-gray-500">"Thanks for creating this app. It's really easy to use and it's wide range of live streaming content, such as sports, music, gaming, and more helped me a lot."</blockquote>
+                       
                 </div>
                 <div class="flex flex-col items-start justify-start w-full h-auto lg:w-1/3">
                     <div class="flex items-center justify-center">
@@ -179,19 +176,19 @@ export default function Home(props) {
                         </div>
                         <div class="flex flex-col items-start justify-center">
                             <h4 class="font-bold text-gray-800">John Smith</h4>
-                            <p class="text-gray-600">Creator of Stuff</p>
+                            <p class="text-gray-600">Teacher</p>
                         </div>
                     </div>
                     <blockquote class="mt-8 text-lg text-gray-500">"Packed with awesome content and exactly what I was
                         looking
-                        for. I would highly recommend this to anyone."</blockquote>
+                        for. I would highly recommend this app to everyone."</blockquote>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="box-border py-8 leading-7 text-gray-900 bg-white border-0 border-gray-200 border-solid sm:py-12 md:py-16 lg:py-24">
+{/* <section class="box-border py-8 leading-7 text-gray-900 bg-white border-0 border-gray-200 border-solid sm:py-12 md:py-16 lg:py-24">
     <div class="box-border max-w-6xl px-4 pb-12 mx-auto border-solid sm:px-6 md:px-6 lg:px-4">
         <div class="flex flex-col items-center leading-7 text-center text-gray-900">
             <h2 class="box-border m-0 text-3xl font-semibold leading-tight tracking-tight text-black border-solid sm:text-4xl md:text-5xl">
@@ -262,7 +259,7 @@ export default function Home(props) {
             </div>
         </div>
     </div>
-</section>
+</section> */}
 
 <section class="bg-white">
     <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
@@ -331,7 +328,7 @@ export default function Home(props) {
             </a>
         </div>
         <p class="mt-8 text-base leading-6 text-center text-gray-400">
-            © 2021 SomeCompany, Inc. All rights reserved.
+            © 2023 LiveStreamer, Inc. All rights reserved.
         </p>
     </div>
 </section>
