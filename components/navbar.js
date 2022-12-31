@@ -153,12 +153,12 @@ class Navbar extends React.Component {
                 >
                   My streams
                 </a>
-                <a
+                {/* <a
                   href="/chat"
                   class="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900"
                 >
                   Pricing
-                </a>
+                </a> */}
                 
               </nav>
             </div>
