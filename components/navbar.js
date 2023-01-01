@@ -112,7 +112,7 @@ class Navbar extends React.Component {
   };
 
   connectWallet = async () => {
-    console.log("connectWallet");
+    // console.log("connectWallet");
     if (this.state.address) return null;
     try{
       const { ethereum } = window;
@@ -130,7 +130,7 @@ class Navbar extends React.Component {
   render() {
     const { cardItems, address, loadMintNFTComponent, createStreamResponse } =
       this.state;
-    console.log("loadMintNFTComponent", loadMintNFTComponent);
+    // console.log("loadMintNFTComponent", loadMintNFTComponent);
     return (
       < >
       
@@ -179,7 +179,7 @@ class Navbar extends React.Component {
                   type="button"
                   class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
                 >
-                <Popover content={address} title="User Login Address">
+                <Popover content={address} placement={'bottom'} title="User Login Address">
                 {/* {address.substring(0, 7)} */}
                 {(address || '').substring(0,25)+'...'}
                 </Popover>

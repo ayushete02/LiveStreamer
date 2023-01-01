@@ -123,7 +123,7 @@ class Player extends React.Component {
   }
 
   connectWallet = async () => {
-    console.log("connectWallet")
+    // console.log("connectWallet")
     if (this.state.address) return null
     const { ethereum } = window;
     await ethereum.request({ method: 'eth_requestAccounts' });

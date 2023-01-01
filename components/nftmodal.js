@@ -54,7 +54,7 @@ class Nftmodal extends React.Component {
     .then(function (response) {
 
       onIPFSUpload(response.data.IpfsHash, nftImageIFSCResponse, JSONBody);
-      console.log(response);
+      console.log("responserrrr",response);
         //handle response here
     })
     .catch(function (error) {
@@ -67,8 +67,7 @@ class Nftmodal extends React.Component {
     const { nftImageIFSCResponse } = this.state;
     const { stream, streamerAddress } = this.props;
     console.log("nftImageIFSCResponse", nftImageIFSCResponse);
-    console.log('Received values of form: ', values);
-
+    
     const streamCreateData = {
       ingest_url: "rtmp://rtmp.livepeer.com/live/",
       stream_key: stream.streamKey,
@@ -80,7 +79,8 @@ class Nftmodal extends React.Component {
       nft_symbol: values.nft_symbol,
       streamer_address: streamerAddress
     }
-
+    
+    console.log('Received values of form: ', values);
     this.pinJSONToIPFS(streamCreateData);
     this.onModalClose();
   };
@@ -224,9 +224,9 @@ class Nftmodal extends React.Component {
               }
 
               <Form.Item wrapperCol={{ span: 12, offset: 6 }}>
-                <Button type="primary" htmlType="submit">
+                <button   class=" px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" type="primary" htmlType="submit">
                   Start Stream
-                </Button>
+                </button>
               </Form.Item>
             </Form>
           </div>

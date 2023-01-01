@@ -1,6 +1,6 @@
 import * as PushAPI from "@pushprotocol/restapi";
 import React, { useState, useEffect } from "react";
-import { Button, FloatButton, Card, Drawer } from 'antd';
+import { Button, FloatButton,Popover, Card, Drawer } from 'antd';
 import { useAccount } from "wagmi";
 import { Chat } from "@pushprotocol/uiweb";
 
@@ -39,7 +39,7 @@ export const Footer = () => {
   return (
     <>
 
-      <div class="bottom-10  z-50 right-40 mr-6 cursor-pointer fixed">
+      <div class="bottom-10  z-25 right-40 mr-6 cursor-pointer fixed">
         <div onClick={showDrawer} class=" inline-flex relative h-4 w-4">
           <div class="px-5 py-7 bg-indigo-400 flex items-center justify-center text-center rounded-2xl shadow-lg">
             <div>
@@ -52,9 +52,9 @@ export const Footer = () => {
       </div>
 
 
+      <Drawer class=" z-25" title="Push Notification (0x7ED790A1Ac108b9A50e24f5c5E061df59e3673a7)" width={'700px'} placement="right" onClose={onClose} open={open}>
 
-      <Drawer title="Push Notification (0x7ED790A1Ac108b9A50e24f5c5E061df59e3673a7)" width={'700px'} placement="right" onClose={onClose} open={open}>
-
+      
           {notification.map((item, index) => {
             console.log(notification);
             return (
@@ -65,13 +65,11 @@ export const Footer = () => {
       </div>
             );
           })}
-
-       
-
       </Drawer>
 
 
-      <Chat
+        
+      <Chat class=' z-50'
         account="0x7ED790A1Ac108b9A50e24f5c5E061df59e3673a7" //user address
         supportAddress="0xC76139fcB9e4952CE9Fb3183C6c3af69534233FE" //support address
         apiKey="jVPMCRom1B.iDRMswdehJG7NpHDiECIHwYMMv6k2KzkPJscFIDyW8TtSnk4blYnGa8DIkfuacU0"
