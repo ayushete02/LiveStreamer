@@ -158,6 +158,12 @@ class Navbar extends React.Component {
                 >
                   My streams
                 </a>
+                <a
+                  href="/xmtpchat"
+                  class="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900"
+                >
+                  Social Chat
+                </a>
                 {/* <a
                   href="/chat"
                   class="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900"
