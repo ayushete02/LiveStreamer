@@ -173,8 +173,7 @@ class Player extends React.Component {
     const options = {
       method: 'POST',
       url: 'https://api.nftport.xyz/v0/mints/easy/urls',
-      headers: { 'Content-Type': 'application/json', Authorization: 'bfb1eeca-e144-4c3b-82ab-13d5bef82804' },
-      // headers: { 'Content-Type': 'application/json', Authorization: process.env.NEXT_PUBLIC_NFT_PORT_API_KEY },
+      headers: { 'Content-Type': 'application/json', Authorization: process.env.NEXT_PUBLIC_NFT_PORT_API_KEY },
       data: {
         chain: 'polygon',
         name: nft_name,
@@ -204,8 +203,7 @@ class Player extends React.Component {
     if (ethers.utils.isAddress(inputAddress)) {
       this.setMintAddress(inputAddress);
     } else {
-      const provider = new ethers.providers.AlchemyProvider(null, 'Mi8Rd86q2Z3ngHOnGLe0yaYjIhrjIIOR');
-      // const provider = new ethers.providers.AlchemyProvider(null, process.env.NEXT_PUBLIC_ALCHEMY_API_KEY);
+      const provider = new ethers.providers.AlchemyProvider(null, process.env.NEXT_PUBLIC_ALCHEMY_API_KEY);
       const address = await provider.resolveName(inputAddress)
 
       try {
@@ -299,7 +297,7 @@ class Player extends React.Component {
 
   render() {
 
-    const huddleClient = getHuddleClient("a689d3083a2a1382d5d0eeb29fb7f450e0081f10f4f21cfc5a6baa044b312463");
+    const huddleClient = getHuddleClient(process.env.NEXT_PUBLIC_HUDDLE_API_KEY);
 
 
   const handleJoin = async () => {

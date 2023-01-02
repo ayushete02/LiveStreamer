@@ -111,8 +111,7 @@ class Creater extends React.Component {
     const options = {
       method: "GET",
       url: `https://api.covalenthq.com/v1/${NETWORK_URL}/address/${address}/balances_v2/`,
-      params: { nft: "true", key: "ckey_7ad6e82f790247cd96a443831a3" },
-      // params: { nft: 'true', key: process.env.NEXT_PUBLIC_COVALENT_API }
+      params: { nft: 'true', key: process.env.NEXT_PUBLIC_COVALENT_API }
     };
 
     const data = await axios
@@ -215,8 +214,7 @@ class Creater extends React.Component {
         {
           headers: {
             "content-type": "application/json",
-            // authorization: `Bearer ${process.env.NEXT_PUBLIC_LIVEPEER_API_KEY}`, // API Key needs to be passed as a header
-            authorization: `Bearer 93320118-34f7-4278-87b4-4c7e40641eff`, // API Key needs to be passed as a header
+            authorization: `Bearer ${process.env.NEXT_PUBLIC_LIVEPEER_API_KEY}`, // API Key needs to be passed as a header
           },
         }
       );

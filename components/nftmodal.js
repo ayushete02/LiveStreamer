@@ -45,10 +45,8 @@ class Nftmodal extends React.Component {
     return axios
     .post(url, JSONBody, {
       headers: {
-        // pinata_api_key: process.env.NEXT_PUBLIC_PINATA_API_KEY,
-        pinata_api_key:'bbad2180bb3c55423327',
-        // pinata_secret_api_key: process.env.NEXT_PUBLIC_PINATA_SECRET_API_KEY
-        pinata_secret_api_key: 'cf7356e190677b58486db071df0d472930240f5b43a2cdd09b4cd850eee0b4f0'
+        pinata_api_key: process.env.NEXT_PUBLIC_PINATA_API_KEY,
+        pinata_secret_api_key: process.env.NEXT_PUBLIC_PINATA_SECRET_API_KEY
       }
     })
     .then(function (response) {
@@ -109,10 +107,8 @@ class Nftmodal extends React.Component {
       maxBodyLength: 'Infinity', //this is needed to prevent axios from erroring out with large files
       headers: {
           'Content-Type': `multipart/form-data; boundary=${data._boundary}`,
-          // pinata_api_key: process.env.NEXT_PUBLIC_PINATA_API_KEY,
-          pinata_api_key: 'bbad2180bb3c55423327',
-          pinata_secret_api_key: 'cf7356e190677b58486db071df0d472930240f5b43a2cdd09b4cd850eee0b4f0'
-          // pinata_secret_api_key: process.env.NEXT_PUBLIC_PINATA_SECRET_API_KEY
+          pinata_api_key: process.env.NEXT_PUBLIC_PINATA_API_KEY,
+          pinata_secret_api_key: process.env.NEXT_PUBLIC_PINATA_SECRET_API_KEY
       }      
     })
     .then((response) => {
