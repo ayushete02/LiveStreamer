@@ -4,6 +4,9 @@ import { ethers } from "ethers";
 import { Chat } from "@pushprotocol/uiweb";
 import { Framework } from "@superfluid-finance/sdk-core";
 
+// import { Conversation } from '../../components/xmtp/Conversation'
+
+
 import { LoadingOutlined,PlusCircleTwoTone ,WechatOutlined,VideoCameraOutlined, EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
 
 import { Avatar,Result,message, Layout, Spin, Row, Col, Card,Skeleton, Image, Button, Input, Popover, Typography, Space } from 'antd';
@@ -15,7 +18,7 @@ import LiveStream from '../../components/livestream'
 const { Header, Footer, Sider, Content } = Layout;
 const { Title, Text, Link } = Typography;
 import VideoJS from '../../components/VideoJS';
-import NormalChat from "../../components/normalchat";
+import XMTPChat from "../../components/xmtpchat";
 
 
 import {
@@ -401,15 +404,15 @@ class Player extends React.Component {
                       <VideoCameraOutlined />,
                       <EditOutlined key="edit" />,
         
-                      <Popover placement="top" className="rounded-full" content={<NormalChat/>} trigger="click">
+                      <Popover placement="top" className="rounded-full" content={<XMTPChat propaddress={address}/>} trigger="click">
+                      {/* <Popover placement="top" className="rounded-full" content={<Conversation recipientWalletAddr={recipientWalletAddr ?? ''} />} trigger="click"> */}
                       <WechatOutlined />
                     </Popover>
                     ]}
                   >
                     <Meta className="p-10" 
-                      avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-                      title="Card title"
-                      description="This is the description"
+                      title={(address || '').substring(0,18)+'...'}
+                      description={'Viewer Address: '+(address || '').substring(0,31)+'...'}
                     />
                   </Card></Card.Grid>
                
@@ -442,7 +445,7 @@ extra={
 
               {!isLoading ? (
                 <>
-                  <Col span={6} offset={1}>
+                  <Col span={6} offset={1}> 
                     <div className='mr-10 w-full border-8 border-solid rounded-lg  border-white bg-white'>
 
                       <Image
@@ -547,16 +550,7 @@ extra={
               /></div>}
             </Row>
           </Content>
-          <Chat
-            account={address} //user address
-            // We cant send message to send address so we Hardcode other address
-            // supportAddress={support_Address} //support address
-            supportAddress="0xC76139fcB9e4952CE9Fb3183C6c3af69534233FE" //support address
-            // const key = process.env.apiKey;
-            apiKey="jVPMCRom1B.iDRMswdehJG7NpHDiECIHwYMMv6k2KzkPJscFIDyW8TtSnk4blYnGa8DIkfuacU0"
-            env="staging"
-            modalTitle="Help Desk"
-          />
+       
         </Layout>
       </>
     );

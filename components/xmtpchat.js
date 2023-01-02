@@ -1,35 +1,71 @@
-import React from 'react'
+import {React,useState} from 'react'
 
 
-export const NormalChat = () => {
+export const XMTPChat = ({ propaddress }) => {
+const [account, setaccount] = useState('');
+const [text, settext] = useState(false);
+async function getAccount() {
+  const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+  const account = accounts[0];
+  console.log(account);
+  setaccount(account)
+}
+
+async function send() {
+    settext(true)
+}
+
     return (
-        <div  style={{
+        <div style={{
             height: '500px',
-          }} class="flex antialiased text-gray-800 w-96">
+        }} class="flex antialiased text-gray-800 w-96">
             <div class="flex flex-row h-full w-full overflow-x-hidden">
 
                 <div class="flex flex-col flex-auto h-full ">
-                  
-                    <div
-                        class="flex flex-col flex-auto flex-shrink-0 rounded-2xl bg-gray-100 h-full p-4"
-                    >
-                         <div class="flex flex-col space-y-1 w-full relative ml-3 text-sm bg-white py-2 px-4 shadow rounded-full">
-                            <button     
+
+                    <div  class="flex flex-col flex-auto flex-shrink-0 rounded-2xl bg-gray-100 h-full p-4" >
+                   {account? (
+                    <div class="flex flex-col space-y-1 w-full relative  text-sm bg-white py-2 px-4 shadow rounded-full">
+                   <button onClick={getAccount}
                                 class="flex flex-row items-center rounded-xl p-2"
                             >
                                 <div
-                                    class="ml-2 flex items-center justify-center h-8 w-8 bg-indigo-200 rounded-full"
+                                    class="flex items-center justify-center h-8 w-16 bg-indigo-200 rounded-full"
                                 >
-                                    H
+                                    From
                                 </div>
-                                <div class="ml-2 text-sm font-semibold">Henry Boyd</div>
+                                <div class="ml-2 text-sm font-semibold">{(account || '').substring(0, 25) + '...'}</div>
+                            </button>
+                            </div>
+    ):(
+        <div class="flex flex-col space-y-1 w-full relative  text-sm  items-center justify-center px-4 py-2 font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600">
+        <button onClick={getAccount}
+    type="button"
+                  class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
+                                // class="flex flex-row items-center rounded-xl p-2"
+                            >
+                                
+                                <div class="ml-2 text-sm font-semibold m-auto">Connect Wallet</div>
                             </button>
                         </div>
-
+                            )}
+                        <div class="mt-2 flex flex-col space-y-1 w-full relative  text-sm bg-white py-2 px-4 shadow rounded-full">
+                            <button
+                                class="flex flex-row items-center rounded-xl p-2"
+                            >
+                                <div
+                                    class="flex items-center justify-center h-8 w-16 bg-indigo-200 rounded-full"
+                                >
+                                    To
+                                </div>
+                                <div class="ml-2 text-sm font-semibold">{(propaddress || '').substring(0, 25) + '...'}</div>
+                            </button>
+                        </div>
+                        {account? (
                         <div class="flex flex-col h-full overflow-x-auto mb-4">
                             <div class="flex flex-col h-full">
                                 <div class="grid grid-cols-12 gap-y-2">
-                                    <div class="col-start-1 col-end-8 p-3 rounded-lg">
+                                    {/* <div class="col-start-1 col-end-8 p-3 rounded-lg">
                                         <div class="flex flex-row items-center">
                                             <div
                                                 class="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 flex-shrink-0"
@@ -42,102 +78,57 @@ export const NormalChat = () => {
                                                 <div>Hey How are you today?</div>
                                             </div>
                                         </div>
-                                    </div>
-                              
-                                
-                                    <div class="col-start-6 col-end-13 p-3 rounded-lg">
+                                    </div> */}
+
+
+<div class="col-start-6 col-end-13 p-3 rounded-lg">
                                         <div class="flex items-center justify-start flex-row-reverse">
                                             <div
                                                 class="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 flex-shrink-0"
                                             >
-                                                A
+                                                #
                                             </div>
                                             <div
                                                 class="relative mr-3 text-sm bg-indigo-100 py-2 px-4 shadow rounded-xl"
                                             >
                                                 <div>
-                                                    Lorem ipsum dolor sit, amet consectetur adipisicing. ?
+                                                    Hey
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                
-                               
-                                    <div class="col-start-1 col-end-8 p-3 rounded-lg">
-                                        <div class="flex flex-row items-center">
+                                    {text?(
+                                     <div class="col-start-6 col-end-13 p-3 rounded-lg">
+                                        <div class="flex items-center justify-start flex-row-reverse">
                                             <div
                                                 class="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 flex-shrink-0"
                                             >
-                                                A
+                                                #
                                             </div>
                                             <div
-                                                class="relative ml-3 text-sm bg-white py-2 px-4 shadow rounded-xl"
+                                                class="relative mr-3 text-sm bg-indigo-100 py-2 px-4 shadow rounded-xl"
                                             >
-                                                <div class="flex flex-row items-center">
-                                                    <button
-                                                        class="flex items-center justify-center bg-indigo-600 hover:bg-indigo-800 rounded-full h-8 w-10"
-                                                    >
-                                                        <svg
-                                                            class="w-6 h-6 text-white"
-                                                            fill="none"
-                                                            stroke="currentColor"
-                                                            viewBox="0 0 24 24"
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                        >
-                                                            <path
-                                                                stroke-linecap="round"
-                                                                stroke-linejoin="round"
-                                                                stroke-width="1.5"
-                                                                d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
-                                                            ></path>
-                                                            <path
-                                                                stroke-linecap="round"
-                                                                stroke-linejoin="round"
-                                                                stroke-width="1.5"
-                                                                d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                                                            ></path>
-                                                        </svg>
-                                                    </button>
-                                                    <div class="flex flex-row items-center space-x-px ml-4">
-                                                        <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                        <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                        <div class="h-4 w-1 bg-gray-500 rounded-lg"></div>
-                                                        <div class="h-8 w-1 bg-gray-500 rounded-lg"></div>
-                                                        <div class="h-8 w-1 bg-gray-500 rounded-lg"></div>
-                                                        <div class="h-10 w-1 bg-gray-500 rounded-lg"></div>
-                                                        <div class="h-10 w-1 bg-gray-500 rounded-lg"></div>
-                                                        <div class="h-12 w-1 bg-gray-500 rounded-lg"></div>
-                                                        <div class="h-10 w-1 bg-gray-500 rounded-lg"></div>
-                                                        <div class="h-6 w-1 bg-gray-500 rounded-lg"></div>
-                                                        <div class="h-5 w-1 bg-gray-500 rounded-lg"></div>
-                                                        <div class="h-4 w-1 bg-gray-500 rounded-lg"></div>
-                                                        <div class="h-3 w-1 bg-gray-500 rounded-lg"></div>
-                                                        <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                        <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                        <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                        <div class="h-10 w-1 bg-gray-500 rounded-lg"></div>
-                                                        <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                        <div class="h-10 w-1 bg-gray-500 rounded-lg"></div>
-                                                        <div class="h-8 w-1 bg-gray-500 rounded-lg"></div>
-                                                        <div class="h-8 w-1 bg-gray-500 rounded-lg"></div>
-                                                        <div class="h-1 w-1 bg-gray-500 rounded-lg"></div>
-                                                        <div class="h-1 w-1 bg-gray-500 rounded-lg"></div>
-                                                        <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                        <div class="h-8 w-1 bg-gray-500 rounded-lg"></div>
-                                                        <div class="h-8 w-1 bg-gray-500 rounded-lg"></div>
-                                                        <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                        <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                        <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                        <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                        <div class="h-4 w-1 bg-gray-500 rounded-lg"></div>
-                                                    </div>
+                                                <div>
+                                                    hey
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    ):(<div></div>)}
+
+
+
                                 </div>
                             </div>
                         </div>
+                        ):(
+                            <div class="flex flex-col h-full overflow-x-auto mb-4">
+                            <div class="flex flex-col h-full">
+                                <div class="grid grid-cols-12 gap-y-2">
+                                    </div>
+                                    </div>
+                                    </div>
+                        )}
                         <div
                             class="flex flex-row items-center h-16 rounded-xl bg-white w-full px-4"
                         >
@@ -188,7 +179,7 @@ export const NormalChat = () => {
                                 </div>
                             </div>
                             <div class="ml-4">
-                                <button
+                                <button onClick={send}
                                     class="flex items-center justify-center bg-indigo-500 hover:bg-indigo-600 rounded-xl text-white px-4 py-1 flex-shrink-0"
                                 >
                                     <span>Send</span>
@@ -218,4 +209,4 @@ export const NormalChat = () => {
     )
 }
 
-export default NormalChat;
+export default XMTPChat;
