@@ -1,4 +1,4 @@
-<button name="button" style="background: #3498db;
+<a style="background: #3498db;
   background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
   background-image: -moz-linear-gradient(top, #3498db, #2980b9);
   background-image: -ms-linear-gradient(top, #3498db, #2980b9);
@@ -10,9 +10,9 @@
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
-  border:none;" onclick="http://www.google.com">Live Demo</button>
+  border:none;" onclick="http://www.google.com">Live Demo</a>
 
-  <button name="button" style="background: #3498db;
+  <a style="background: #3498db;
   background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
   background-image: -moz-linear-gradient(top, #3498db, #2980b9);
   background-image: -ms-linear-gradient(top, #3498db, #2980b9);
@@ -24,4 +24,4 @@
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
-  border:none;" onclick="http://www.google.com">Presentation</button>
+  border:none;" onclick="http://www.google.com">Presentation</a>
