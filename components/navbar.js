@@ -153,13 +153,13 @@ class Navbar extends React.Component {
                   Home
                 </a>
                 <a
-                  href="/user/address"
+                  href="user/address"
                   className="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900"
                 >
                   My streams
                 </a>
                 <a
-                  href="/xmtpchat"
+                  href="xmtpchat"
                   className="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900"
                 >
                   Social Chat

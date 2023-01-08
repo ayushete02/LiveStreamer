@@ -373,7 +373,7 @@ class Creater extends React.Component {
                               }
                               actions={[
                                 <a
-                                  target="_blank"
+                                  target="_blank" rel="noreferrer"
                                   href={`/play/${item.ipfsHash.substring(21)}`}
                                 >
                                   {" "}

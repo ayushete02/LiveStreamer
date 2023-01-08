@@ -29,7 +29,6 @@ const AddressInput = ({
   const client = useAppStore((state) => state.client)
 
   const focusInputElementRef = () => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     ;(inputElement.current as any)?.focus()
   }
 

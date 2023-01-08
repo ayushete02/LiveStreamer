@@ -65,7 +65,7 @@ const PeerVideoAudioElem: React.FC<Props> = ({ peerIdAtIndex }) => {
         ref={videoRef}
         muted
         autoPlay
-        playsInline
+        
         style={{ width: "100%" }}
       />
       <audio ref={audioRef} autoPlay playsInline controls={false}></audio>

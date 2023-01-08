@@ -19,7 +19,7 @@ const MeVideoElem = () => {
       ref={videoRef}
       autoPlay
       muted
-      playsInline
+     
     ></video>
   );
 };
