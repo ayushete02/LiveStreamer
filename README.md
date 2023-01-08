@@ -1,34 +1,8 @@
 # Live Streamer
 LiveStreamer is a decentralized streaming platform that gives viewers generative NFT and allows them to support the creators through subscriptions. Various technologies are incorporated into the platform to provide users with a comprehensive and engaging experience. As the platform's underlying infrastructure, Livepeer supports scalable and low-cost live streaming to a global audience.
 
-
-<button name="button" style="background: #3498db;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-  background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  background-image: linear-gradient(to bottom, #3498db, #2980b9);
-  text-shadow: 1px 1px 3px #666666;
-  font-family: Courier New;
-  color: #ffffff;
-  font-size: 20px;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
-  border:none;" onclick="http://www.google.com">Live Demo</button>
-
-  <button name="button" style="background: #3498db;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-  background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  background-image: linear-gradient(to bottom, #3498db, #2980b9);
-  text-shadow: 1px 1px 3px #666666;
-  font-family: Courier New;
-  color: #ffffff;
-  font-size: 20px;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
-  border:none;" onclick="http://www.google.com">Presentation</button>
+[![](https://i.ibb.co/f4jLP7L/Screenshot-33.png)](https://drive.google.com/file/d/1wZm1RPq9dYeWT5QZniQEjFxXLubuenkn/view?usp=sharing)
+[![](https://i.ibb.co/XCwwYfW/FVB.png)](https://docs.google.com/presentation/d/1N2zJrQbRtcU5fjORpFprkB0AUkldNkTboZIUJXnt6_Y/edit?usp=sharing)
 
 <hr/>
 
