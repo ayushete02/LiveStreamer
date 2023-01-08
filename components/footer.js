@@ -59,7 +59,7 @@ export const Footer = () => {
             console.log(notification);
             return (
               <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
-              <Card className="mt-3" type="inner" title={item['app']} extra={<a href="/"><b>{item['blockchain']}</b></a>}>
+              <Card className="mt-3" type="inner" title={item['app']} extra={<a href="#"><b>{item['blockchain']}</b></a>}>
                 {item['message']}
               </Card>
       </div>
