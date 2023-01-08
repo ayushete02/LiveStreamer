@@ -20,7 +20,7 @@ export const NotificationShow = () => {
     return (
         <div
         style={{ "margin-top": "100px" }}
-        class="overflow-x-auto relative shadow-md sm:rounded-lg"
+        className="overflow-x-auto relative shadow-md sm:rounded-lg"
     >
         <table style={{"border":"2px solid black"}}>
         <tr style={{"border":"2px solid black"}}>

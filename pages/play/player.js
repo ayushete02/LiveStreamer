@@ -425,7 +425,7 @@ extra={
   <button
     onClick={confirm}
     type="button"
-    class="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+    className="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
   >
     Share Stream
   </button>
@@ -461,10 +461,10 @@ extra={
                       <br />
                       {address ?
                         <Button onClick={this.setConnectedWalletAddressAsMintAddress} type="button"
-                          class="w-full items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600" size="large" block >Select {address.substring(0, 7)} </Button> :
+                          className="w-full items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600" size="large" block >Select {address.substring(0, 7)} </Button> :
                         <div>
                           <Button onClick={this.connectWallet} type="button"
-                            class="w-full items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600" size="large" block>Connect Wallet</Button>
+                            className="w-full items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600" size="large" block>Connect Wallet</Button>
 
                         </div>
 
@@ -480,7 +480,7 @@ extra={
                       <Input.Group compact>
                         <Input style={{ width: 'calc(100% - 80px)' }} placeholder="Enter address or ens" name="address" onChange={this.handleInputChange} />
                         <Button type="button"
-                          class="w-full items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600" onClick={this.onAddingAddress}>Submit</Button>
+                          className="w-full items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600" onClick={this.onAddingAddress}>Submit</Button>
                       </Input.Group>
                       <div>
                         <Space direction="horizontal" style={{ width: '100%', justifyContent: 'center', padding: "5px" }}>
@@ -504,7 +504,7 @@ extra={
                           size="large"
                           block
                           type="button"
-                          class="w-full items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
+                          className="w-full items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
                           onClick={this.mintNFTPort}
                         >Mint NFT without Gas</Button>
                       </Popover>
@@ -514,7 +514,7 @@ extra={
                       <Popover content="Subscribe via Superfluid" title="Subscribe">
                         <Button
                           type="button"
-                          class="w-full items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
+                          className="w-full items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
                           size="large"
                           block
                           onClick={this.createFlow}

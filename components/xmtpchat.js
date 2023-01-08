@@ -18,62 +18,62 @@ async function send() {
     return (
         <div style={{
             height: '500px',
-        }} class="flex antialiased text-gray-800 w-96">
-            <div class="flex flex-row h-full w-full overflow-x-hidden">
+        }} className="flex antialiased text-gray-800 w-96">
+            <div className="flex flex-row h-full w-full overflow-x-hidden">
 
-                <div class="flex flex-col flex-auto h-full ">
+                <div className="flex flex-col flex-auto h-full ">
 
-                    <div  class="flex flex-col flex-auto flex-shrink-0 rounded-2xl bg-gray-100 h-full p-4" >
+                    <div  className="flex flex-col flex-auto flex-shrink-0 rounded-2xl bg-gray-100 h-full p-4" >
                    {account? (
-                    <div class="flex flex-col space-y-1 w-full relative  text-sm bg-white py-2 px-4 shadow rounded-full">
+                    <div className="flex flex-col space-y-1 w-full relative  text-sm bg-white py-2 px-4 shadow rounded-full">
                    <button onClick={getAccount}
-                                class="flex flex-row items-center rounded-xl p-2"
+                                className="flex flex-row items-center rounded-xl p-2"
                             >
                                 <div
-                                    class="flex items-center justify-center h-8 w-16 bg-indigo-200 rounded-full"
+                                    className="flex items-center justify-center h-8 w-16 bg-indigo-200 rounded-full"
                                 >
                                     From
                                 </div>
-                                <div class="ml-2 text-sm font-semibold">{(account || '').substring(0, 25) + '...'}</div>
+                                <div className="ml-2 text-sm font-semibold">{(account || '').substring(0, 25) + '...'}</div>
                             </button>
                             </div>
     ):(
-        <div class="flex flex-col space-y-1 w-full relative  text-sm  items-center justify-center px-4 py-2 font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600">
+        <div className="flex flex-col space-y-1 w-full relative  text-sm  items-center justify-center px-4 py-2 font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600">
         <button onClick={getAccount}
     type="button"
-                  class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
-                                // class="flex flex-row items-center rounded-xl p-2"
+                  className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
+                                // className="flex flex-row items-center rounded-xl p-2"
                             >
                                 
-                                <div class="ml-2 text-sm font-semibold m-auto">Connect Wallet</div>
+                                <div className="ml-2 text-sm font-semibold m-auto">Connect Wallet</div>
                             </button>
                         </div>
                             )}
-                        <div class="mt-2 flex flex-col space-y-1 w-full relative  text-sm bg-white py-2 px-4 shadow rounded-full">
+                        <div className="mt-2 flex flex-col space-y-1 w-full relative  text-sm bg-white py-2 px-4 shadow rounded-full">
                             <button
-                                class="flex flex-row items-center rounded-xl p-2"
+                                className="flex flex-row items-center rounded-xl p-2"
                             >
                                 <div
-                                    class="flex items-center justify-center h-8 w-16 bg-indigo-200 rounded-full"
+                                    className="flex items-center justify-center h-8 w-16 bg-indigo-200 rounded-full"
                                 >
                                     To
                                 </div>
-                                <div class="ml-2 text-sm font-semibold">{(propaddress || '').substring(0, 25) + '...'}</div>
+                                <div className="ml-2 text-sm font-semibold">{(propaddress || '').substring(0, 25) + '...'}</div>
                             </button>
                         </div>
                         {account? (
-                        <div class="flex flex-col h-full overflow-x-auto mb-4">
-                            <div class="flex flex-col h-full">
-                                <div class="grid grid-cols-12 gap-y-2">
-                                    {/* <div class="col-start-1 col-end-8 p-3 rounded-lg">
-                                        <div class="flex flex-row items-center">
+                        <div className="flex flex-col h-full overflow-x-auto mb-4">
+                            <div className="flex flex-col h-full">
+                                <div className="grid grid-cols-12 gap-y-2">
+                                    {/* <div className="col-start-1 col-end-8 p-3 rounded-lg">
+                                        <div className="flex flex-row items-center">
                                             <div
-                                                class="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 flex-shrink-0"
+                                                className="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 flex-shrink-0"
                                             >
                                                 A
                                             </div>
                                             <div
-                                                class="relative ml-3 text-sm bg-white py-2 px-4 shadow rounded-xl"
+                                                className="relative ml-3 text-sm bg-white py-2 px-4 shadow rounded-xl"
                                             >
                                                 <div>Hey How are you today?</div>
                                             </div>
@@ -81,15 +81,15 @@ async function send() {
                                     </div> */}
 
 
-<div class="col-start-6 col-end-13 p-3 rounded-lg">
-                                        <div class="flex items-center justify-start flex-row-reverse">
+<div className="col-start-6 col-end-13 p-3 rounded-lg">
+                                        <div className="flex items-center justify-start flex-row-reverse">
                                             <div
-                                                class="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 flex-shrink-0"
+                                                className="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 flex-shrink-0"
                                             >
                                                 #
                                             </div>
                                             <div
-                                                class="relative mr-3 text-sm bg-indigo-100 py-2 px-4 shadow rounded-xl"
+                                                className="relative mr-3 text-sm bg-indigo-100 py-2 px-4 shadow rounded-xl"
                                             >
                                                 <div>
                                                     Hey
@@ -98,15 +98,15 @@ async function send() {
                                         </div>
                                     </div>
                                     {text?(
-                                     <div class="col-start-6 col-end-13 p-3 rounded-lg">
-                                        <div class="flex items-center justify-start flex-row-reverse">
+                                     <div className="col-start-6 col-end-13 p-3 rounded-lg">
+                                        <div className="flex items-center justify-start flex-row-reverse">
                                             <div
-                                                class="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 flex-shrink-0"
+                                                className="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 flex-shrink-0"
                                             >
                                                 #
                                             </div>
                                             <div
-                                                class="relative mr-3 text-sm bg-indigo-100 py-2 px-4 shadow rounded-xl"
+                                                className="relative mr-3 text-sm bg-indigo-100 py-2 px-4 shadow rounded-xl"
                                             >
                                                 <div>
                                                     hey
@@ -122,22 +122,22 @@ async function send() {
                             </div>
                         </div>
                         ):(
-                            <div class="flex flex-col h-full overflow-x-auto mb-4">
-                            <div class="flex flex-col h-full">
-                                <div class="grid grid-cols-12 gap-y-2">
+                            <div className="flex flex-col h-full overflow-x-auto mb-4">
+                            <div className="flex flex-col h-full">
+                                <div className="grid grid-cols-12 gap-y-2">
                                     </div>
                                     </div>
                                     </div>
                         )}
                         <div
-                            class="flex flex-row items-center h-16 rounded-xl bg-white w-full px-4"
+                            className="flex flex-row items-center h-16 rounded-xl bg-white w-full px-4"
                         >
                             <div>
                                 <button
-                                    class="flex items-center justify-center text-gray-400 hover:text-gray-600"
+                                    className="flex items-center justify-center text-gray-400 hover:text-gray-600"
                                 >
                                     <svg
-                                        class="w-5 h-5"
+                                        className="w-5 h-5"
                                         fill="none"
                                         stroke="currentColor"
                                         viewBox="0 0 24 24"
@@ -152,17 +152,17 @@ async function send() {
                                     </svg>
                                 </button>
                             </div>
-                            <div class="flex-grow ml-4">
-                                <div class="relative w-full">
+                            <div className="flex-grow ml-4">
+                                <div className="relative w-full">
                                     <input
                                         type="text"
-                                        class="flex w-full border rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10"
+                                        className="flex w-full border rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10"
                                     />
                                     <button
-                                        class="absolute flex items-center justify-center h-full w-12 right-0 top-0 text-gray-400 hover:text-gray-600"
+                                        className="absolute flex items-center justify-center h-full w-12 right-0 top-0 text-gray-400 hover:text-gray-600"
                                     >
                                         <svg
-                                            class="w-6 h-6"
+                                            className="w-6 h-6"
                                             fill="none"
                                             stroke="currentColor"
                                             viewBox="0 0 24 24"
@@ -178,14 +178,14 @@ async function send() {
                                     </button>
                                 </div>
                             </div>
-                            <div class="ml-4">
+                            <div className="ml-4">
                                 <button onClick={send}
-                                    class="flex items-center justify-center bg-indigo-500 hover:bg-indigo-600 rounded-xl text-white px-4 py-1 flex-shrink-0"
+                                    className="flex items-center justify-center bg-indigo-500 hover:bg-indigo-600 rounded-xl text-white px-4 py-1 flex-shrink-0"
                                 >
                                     <span>Send</span>
-                                    <span class="ml-2">
+                                    <span className="ml-2">
                                         <svg
-                                            class="w-4 h-4 transform rotate-45 -mt-px"
+                                            className="w-4 h-4 transform rotate-45 -mt-px"
                                             fill="none"
                                             stroke="currentColor"
                                             viewBox="0 0 24 24"

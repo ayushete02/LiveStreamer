@@ -134,39 +134,39 @@ class Navbar extends React.Component {
     return (
       < >
       
-        <section class="fixed z-50 shadow-lg w-full px-8 text-gray-700 bg-white ">
-          <div class="container flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row ">
-            <div class="relative flex flex-col md:flex-row">
+        <section className="fixed z-50 shadow-lg w-full px-8 text-gray-700 bg-white ">
+          <div className="container flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row ">
+            <div className="relative flex flex-col md:flex-row">
               <a
                 href="/"
-                class="flex items-center mb-5 font-medium text-gray-900 lg:w-auto lg:items-center lg:justify-center md:mb-0"
+                className="flex items-center mb-5 font-medium text-gray-900 lg:w-auto lg:items-center lg:justify-center md:mb-0"
               >
-                <span class="mx-auto text-xl font-black leading-none text-gray-900 select-none">
-                  Live<span class="text-indigo-600">Streamer</span>
+                <span className="mx-auto text-xl font-black leading-none text-gray-900 select-none">
+                  Live<span className="text-indigo-600">Streamer</span>
                 </span>
               </a>
-              <nav class="flex flex-wrap items-center mb-5 text-base md:mb-0 md:pl-8 md:ml-8 md:border-l md:border-gray-200">
+              <nav className="flex flex-wrap items-center mb-5 text-base md:mb-0 md:pl-8 md:ml-8 md:border-l md:border-gray-200">
                 <a
                   href="/"
-                  class="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900"
+                  className="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900"
                 >
                   Home
                 </a>
                 <a
                   href="/user/address"
-                  class="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900"
+                  className="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900"
                 >
                   My streams
                 </a>
                 <a
                   href="/xmtpchat"
-                  class="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900"
+                  className="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900"
                 >
                   Social Chat
                 </a>
                 {/* <a
                   href="/chat"
-                  class="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900"
+                  className="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900"
                 >
                   Pricing
                 </a> */}
@@ -174,8 +174,8 @@ class Navbar extends React.Component {
               </nav>
             </div>
 
-            <div class="inline-flex items-center ml-5 space-x-6 lg:justify-end">
-              {/* <a href="/user/0x1da502D83c2967cD185E9179376F1edA3DC52922" class="text-base font-medium leading-6 text-gray-600 whitespace-no-wrap transition duration-150 ease-in-out hover:text-gray-900">
+            <div className="inline-flex items-center ml-5 space-x-6 lg:justify-end">
+              {/* <a href="/user/0x1da502D83c2967cD185E9179376F1edA3DC52922" className="text-base font-medium leading-6 text-gray-600 whitespace-no-wrap transition duration-150 ease-in-out hover:text-gray-900">
                 Create Stream
                 </a> */}
               
@@ -183,7 +183,7 @@ class Navbar extends React.Component {
                 <a
                   href={`/user/${address}`}
                   type="button"
-                  class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
+                  className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
                 >
                 <Popover content={address} placement={'bottom'} title="User Login Address">
                 {/* {address.substring(0, 7)} */}
@@ -194,7 +194,7 @@ class Navbar extends React.Component {
                 <a
                   onClick={this.connectWallet}
                   type="button"
-                  class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
+                  className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
                 >
                   Connect Wallet
                 </a>
