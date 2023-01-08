@@ -4,7 +4,7 @@ LiveStreamer is a decentralized streaming platform that gives viewers generative
 [![](https://i.ibb.co/f4jLP7L/Screenshot-33.png)](https://drive.google.com/file/d/1wZm1RPq9dYeWT5QZniQEjFxXLubuenkn/view?usp=sharing)
 [![](https://i.ibb.co/XCwwYfW/FVB.png)](https://docs.google.com/presentation/d/1N2zJrQbRtcU5fjORpFprkB0AUkldNkTboZIUJXnt6_Y/edit?usp=sharing)
 
-<button>dddd<button/>
+
 <hr/>
 
 On LiveStreamer, streamers are able to create a new stream using Livepeer. They have the option to upload an NFT to accompany their stream. The stream data, along with any related URLs and information for future NFT generation, is stored in IPF. The IPFS hash is then stored on the blockchain as an ERC721 token, using Polygon blockchain. This allows for the stream and its associated data to be securely and transparently recorded and stored on the blockchain.
