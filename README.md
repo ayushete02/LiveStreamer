@@ -15,6 +15,29 @@ Some potential goals for the LiveStreamer includes:
 
 # Technology we used
 
+- Huddle01 provides a feature that lets users turn on their cameras while watching a stream, providing an extra layer of immersiveness and interactivity for both the streamer and the audience. An optional feature, users can activate or deactivate it at their discretion.
+
+- The Ethereum Name Service (ENS) maps usernames to Ethereum wallet addresses on the platform. It provides a more user-friendly experience since users do not have to enter the wallet address every time they want to mint NFTs. Moreover, it adds an extra layer of security, since users can protect their wallet addresses with memorable and unique usernames.
+
+- NFTPort enables live streams to be transformed into non-fungible tokens (NFTs). This enables streamers to sell their streams as unique, collectible items, generating additional revenue for them and giving the platform a new dimension. NFTPort is also used for retrieving the Live Streams minted by users.
+
+- The Polygon blockchain provides streamers with security, transparency, and additional monetization opportunities, as well as adding a collectible aspect to their platform. This feature, enabled through the integration of NFTPort, adds a unique and collectible aspect to the LiveStreamer application and further sets it apart from other live streaming platforms.
+
+- During live streams, users can communicate in real-time through XMTP, with the goal of cultivating a sense of community. Users can also chat with anyone on the platform, adding a social aspect and making connections beyond those watching the same stream.
+
+- Users receive notifications via push protocol through the application. This can be used to alert users to stream starts, platform updates, and other important information. In addition to chat support, users can communicate efficiently with the support team regarding issues or questions.
+
+- The LiveStreamer application combines these technologies to create a comprehensive and engaging platform for its users. Some advantages of the application include:
+
+- - Low-cost and scalable streaming thanks to the use of Livepeer
+- - Increased interactivity and immersiveness with the optional camera feature provided by Huddle01
+- - User-friendly experience with the integration of ENS for username-to-wallet address mapping
+- - Additional revenue stream for streamers with the ability to sell streams as NFTs through NFTPort
+- - Strong sense of community and social connections thanks to the real-time chat functionality provided by XMTP
+- - Efficient communication and support through the use of Push protocol for notifications and chat support.
+
+Overall, LiveStreamer provides a unique and engaging experience for its users through the integration of various technologies.
+
 
 
 ## Streamer
