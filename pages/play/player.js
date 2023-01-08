@@ -402,7 +402,7 @@ class Player extends React.Component {
                       <VideoCameraOutlined key="videocamoutline" />,
                       <EditOutlined key="edit" />,
         
-                      <Popover placement="top" className="rounded-full" content={<XMTPChat propaddress={address}/>} trigger="click">
+                      <Popover key="key" placement="top" className="rounded-full" content={<XMTPChat propaddress={address}/>} trigger="click">
                       {/* <Popover placement="top" className="rounded-full" content={<Conversation recipientWalletAddr={recipientWalletAddr ?? ''} />} trigger="click"> */}
                       <WechatOutlined key="wechat" />
                     </Popover>
