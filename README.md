@@ -3,6 +3,7 @@ LiveStreamer is a decentralized streaming platform that gives viewers generative
 
 [![Button Click]][Link] 
 [![Button Hover]][Link] 
+[<img src="https://s18955.pcdn.co/wp-content/uploads/2018/02/github.png" width="25"/>](https://github.com/user/repository/subscription)
 
 <hr/>
 
