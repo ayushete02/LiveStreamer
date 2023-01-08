@@ -1,15 +1,40 @@
 # Live Streamer
 LiveStreamer is a decentralized streaming platform that gives viewers generative NFT and allows them to support the creators through subscriptions. Various technologies are incorporated into the platform to provide users with a comprehensive and engaging experience. As the platform's underlying infrastructure, Livepeer supports scalable and low-cost live streaming to a global audience.
 
-[![Button Click]][Link] 
-[![Button Hover]][Link] 
-[<img src="https://s18955.pcdn.co/wp-content/uploads/2018/02/github.png" width="25"/>](https://github.com/user/repository/subscription)
+
+<button name="button" style="background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  text-shadow: 1px 1px 3px #666666;
+  font-family: Courier New;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  border:none;" onclick="http://www.google.com">Live Demo</button>
+
+  <button name="button" style="background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  text-shadow: 1px 1px 3px #666666;
+  font-family: Courier New;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  border:none;" onclick="http://www.google.com">Presentation</button>
 
 <hr/>
 
 On LiveStreamer, streamers are able to create a new stream using Livepeer. They have the option to upload an NFT to accompany their stream. The stream data, along with any related URLs and information for future NFT generation, is stored in IPF. The IPFS hash is then stored on the blockchain as an ERC721 token, using Polygon blockchain. This allows for the stream and its associated data to be securely and transparently recorded and stored on the blockchain.
 
-The viewer has the option to generate a viewer NFT through NFTPort, which is minted without the need for gas. The NFT is published to the Polygon blockchain and is generated using an NFT image uploaded from IPFS, the address of the streamer and viewer, and the viewer's avatar if they have set one through ENS. Generative NFTs are created in this manner every time they are requested, allowing for the creation of unique and collectible items for the viewer
+The viewer has the option to generate a viewer NFT through NFTPort, which is minted without the need for gas. The NFT is published to the Polygon blockchain and is generated using an NFT image uploaded from IPFS, the address of the streamer and viewer, and the viewer's avatar if they have set one through ENS. Generative NFTs are created in this manner every time they are requested, allowing for the creation of unique and collectible items for the viewer 
 
 ## Goals
 Some potential goals for the LiveStreamer includes:
