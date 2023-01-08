@@ -372,15 +372,10 @@ class Creater extends React.Component {
                                 <img alt="example" src={`${item.nft_image}`} />
                               }
                               actions={[
-                                <a
-                                  target="_blank" rel="noreferrer"
-                                  href={`/play/${item.ipfsHash.substring(21)}`}
-                                >
-                                  
-                                  <button   type="button"
+                                                                
+                                  <a   type="button" href={`/play/${item.ipfsHash.substring(21)}`}  target="_blank"  rel="noreferrer"
                   className=" px-5 py-2 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-                key="play"> Go to Stream </button>
-                                </a>,
+                key="play"> Go to Stream </a>,
                                 item.newly_added && (
                                   <Mintnft
                                     address={address}

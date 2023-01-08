@@ -59,7 +59,7 @@ export const Footer = () => {
             console.log(notification);
             return (
             
-              <Card className="mt-3" type="inner" title={item['app']} extra={<a href="#"><b>{item['blockchain']}</b></a>}>
+              <Card key='kwy' className="mt-3" type="inner" title={item['app']} extra={<a href="#"><b>{item['blockchain']}</b></a>}>
                 {item['message']}
               </Card>
       
