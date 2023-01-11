@@ -81,17 +81,17 @@ class Creater extends React.Component {
         //   playback_url: "https://cdn.livepeer.com/hls/3a8dsveuy8dc3fxi/index.m3u8",
         //   active: true
         // },
-        {
-          stream_name: "Stream Name",
-          ipfsHash: "QmSFD715swS5AqTxU1nJBHZisxtuSD18ygRE4ix9UBbjiU",
-          nft_image:
-            "https://ipfs.io/ipfs/QmW93a1P5ADoUmjtjnCnrmuDHmKM9M9xEPFJbtG2hAVzSG",
-          ingest_url: "rtmp://rtmp.livepeer.com/live/",
-          stream_key: "3a8d-vq9q-dj24-tenr",
-          playback_url:
-            "https://cdn.livepeer.com/hls/3a8dsveuy8dc3fxi/index.m3u8",
-          active: true,
-        },
+        // {
+        //   stream_name: "Stream Name",
+        //   ipfsHash: "QmSFD715swS5AqTxU1nJBHZisxtuSD18ygRE4ix9UBbjiU",
+        //   nft_image:
+        //     "https://ipfs.io/ipfs/QmW93a1P5ADoUmjtjnCnrmuDHmKM9M9xEPFJbtG2hAVzSG",
+        //   ingest_url: "rtmp://rtmp.livepeer.com/live/",
+        //   stream_key: "3a8d-vq9q-dj24-tenr",
+        //   playback_url:
+        //     "https://cdn.livepeer.com/hls/3a8dsveuy8dc3fxi/index.m3u8",
+        //   active: true,
+        // },
       ],
     };
   }
