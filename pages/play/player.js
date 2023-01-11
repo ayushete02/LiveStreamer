@@ -23,12 +23,6 @@ import {
   getHuddleClient,
 } from "@huddle01/huddle01-client";
 
-import { useHuddleStore } from "@huddle01/huddle01-client/store";
-import PeerVideoAudioElem from '../../components/PeerVideoAudioElem.tsx';
-import MeVideoElem from '../../components/MeVideoElem.tsx';
-import { useHuddle } from "@huddle01/huddle01-client/hooks";
-import { useHuddleClient } from "@huddle01/huddle01-client/hooks";
-
 const gridStyle = {
   width: '33.33%',
   textAlign: 'center',

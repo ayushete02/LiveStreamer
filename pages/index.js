@@ -7,10 +7,8 @@ import { Chat } from "@pushprotocol/uiweb";
 
 
 export default function Home(props) {
-  // const { address1 } = useAccount();
-  var address1 = '0x7ED790A1Ac108b9A50e24f5c5E061df59e3673a7';
+  const { address1 } = useAccount();
  
-
   return (
 
 
@@ -310,7 +308,7 @@ export default function Home(props) {
 
 
       <Chat
-          account="0x7ED790A1Ac108b9A50e24f5c5E061df59e3673a7" //user address
+          account={address} //user address
           supportAddress="0xC76139fcB9e4952CE9Fb3183C6c3af69534233FE" //support address
           apiKey={process.env.NEXT_PUBLIC_PUSH_API}
           env="staging"

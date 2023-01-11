@@ -52,14 +52,14 @@ export const Footer = () => {
       </div>
 
 
-      <Drawer  title="Push Notification (0x7ED790A1Ac108b9A50e24f5c5E061df59e3673a7)" width={'700px'} placement="right" onClose={onClose} open={open}>
+      <Drawer  title="Push Notification ({0x7ED790A1Ac108b9A50e24f5c5E061df59e3673a7})" width={'700px'} placement="right" onClose={onClose} open={open}>
 
       
           {notification.map((item, index) => {
             console.log(notification);
             return (
             
-              <Card key='kwy' className="mt-3" type="inner" title={item['app']} extra={<a href="#"><b>{item['blockchain']}</b></a>}>
+              <Card key='key' className="mt-3" type="inner" title={item['app']} extra={<a href="#"><b>{item['blockchain']}</b></a>}>
                 {item['message']}
               </Card>
       
@@ -70,7 +70,7 @@ export const Footer = () => {
 
         
       <Chat className='z-50'
-        account="0x7ED790A1Ac108b9A50e24f5c5E061df59e3673a7" //user address
+        account={address} //user address
         supportAddress="0xC76139fcB9e4952CE9Fb3183C6c3af69534233FE" //support address
         apiKey={process.env.NEXT_PUBLIC_PUSH_API}
         env="staging"
