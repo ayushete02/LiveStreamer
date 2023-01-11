@@ -3,8 +3,7 @@ import axios from 'axios';
 import { ethers } from "ethers";
 import { Chat } from "@pushprotocol/uiweb";
 import { Framework } from "@superfluid-finance/sdk-core";
-
-// import { Conversation } from '../../components/xmtp/Conversation'
+import { Conversation } from '../../components/xmtp/Conversation'
 
 
 import { LoadingOutlined,PlusCircleTwoTone ,WechatOutlined,VideoCameraOutlined, EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
@@ -17,8 +16,6 @@ import LiveStream from '../../components/livestream'
 
 const { Header, Footer, Sider, Content } = Layout;
 const { Title, Text, Link } = Typography;
-import VideoJS from '../../components/VideoJS';
-import XMTPChat from "../../components/xmtpchat";
 
 
 import {
@@ -29,10 +26,8 @@ import {
 import { useHuddleStore } from "@huddle01/huddle01-client/store";
 import PeerVideoAudioElem from '../../components/PeerVideoAudioElem.tsx';
 import MeVideoElem from '../../components/MeVideoElem.tsx';
-
-
-
-
+import { useHuddle } from "@huddle01/huddle01-client/hooks";
+import { useHuddleClient } from "@huddle01/huddle01-client/hooks";
 
 const gridStyle = {
   width: '33.33%',
@@ -367,7 +362,7 @@ class Player extends React.Component {
                   <div data-vjs-player className=" px-200">
                     {playback_url ? (
                       <>
-                        <VideoJS options={videoJsOptions} onReady={this.handlePlayerReady} />
+                        <  HuddleClientProvider options={videoJsOptions} onReady={this.handlePlayerReady} />
                         <br />
                         <Title level={1}>{stream_name}</Title>
                         <Title level={5}>By: {streamer_address}</Title>
@@ -402,8 +397,7 @@ class Player extends React.Component {
                       <VideoCameraOutlined key="videocamoutline" />,
                       <EditOutlined key="edit" />,
         
-                      <Popover key="key" placement="top" className="rounded-full" content={<XMTPChat propaddress={address}/>} trigger="click">
-                      {/* <Popover placement="top" className="rounded-full" content={<Conversation recipientWalletAddr={recipientWalletAddr ?? ''} />} trigger="click"> */}
+                      <Popover placement="top" className="rounded-full" content={<Conversation recipientWalletAddr={recipientWalletAddr ?? ''} />} trigger="click">
                       <WechatOutlined key="wechat" />
                     </Popover>
                     ]}
