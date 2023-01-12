@@ -33,10 +33,10 @@ Some potential goals for the LiveStreamer includes:
 
 - The LiveStreamer application combines these technologies to create a comprehensive and engaging platform for its users. Some advantages of the application include:
 
-- - Low-cost and scalable streaming thanks to the use of Livepeer
-- - Increased interactivity and immersiveness with the optional camera feature provided by Huddle01
-- - User-friendly experience with the integration of ENS for username-to-wallet address mapping
-- - Additional revenue stream for streamers with the ability to sell streams as NFTs through NFTPort
+-- Low-cost and scalable streaming thanks to the use of Livepeer
+-- Increased interactivity and immersiveness with the optional camera feature provided by Huddle01
+-- User-friendly experience with the integration of ENS for username-to-wallet address mapping
+ - Additional revenue stream for streamers with the ability to sell streams as NFTs through NFTPort
 - - Strong sense of community and social connections thanks to the real-time chat functionality provided by XMTP
 - - Efficient communication and support through the use of Push protocol for notifications and chat support.
 
