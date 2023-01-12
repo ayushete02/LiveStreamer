@@ -51,11 +51,11 @@ Clone this repo by running
 git clone https://github.com/ayushete02/LiveStreamer
 ```
 ```yaml
-`cd LiveStreamer
+cd LiveStreamer
 ```
 ```yaml
-`npm install
+npm install
 ```
 ```yaml
-`npm run dev
+npm run dev
 ```
