@@ -1,9 +1,11 @@
 # Live Streamer
 LiveStreamer is a decentralized streaming platform that gives viewers generative NFT and allows them to support the creators through subscriptions. Various technologies are incorporated into the platform to provide users with a comprehensive and engaging experience. As the platform's underlying infrastructure, Livepeer supports scalable and low-cost live streaming to a global audience.
 
+
+<hr/>
+
 [![](https://i.ibb.co/7kYR0v5/Screenshot-33-4.png)](https://drive.google.com/file/d/1wZm1RPq9dYeWT5QZniQEjFxXLubuenkn/view?usp=sharing )
 [![](https://i.ibb.co/0t4bgFn/FVB.png)](https://docs.google.com/presentation/d/1N2zJrQbRtcU5fjORpFprkB0AUkldNkTboZIUJXnt6_Y/edit?usp=sharing)
-
 
 <hr/>
 
