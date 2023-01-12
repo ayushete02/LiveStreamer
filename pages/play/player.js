@@ -4,25 +4,14 @@ import { ethers } from "ethers";
 import { Chat } from "@pushprotocol/uiweb";
 import { Framework } from "@superfluid-finance/sdk-core";
 import { Conversation } from '../../components/xmtp/Conversation'
-
-
-import { LoadingOutlined,PlusCircleTwoTone ,WechatOutlined,VideoCameraOutlined, EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
-
-import { Avatar,Result,message, Layout, Spin, Row, Col, Card,Skeleton, Image, Button, Input, Popover, Typography, Space } from 'antd';
-const { Meta } = Card;
-
 import Navbar from '../../components/navbar'
-import LiveStream from '../../components/livestream'
+import { HuddleClientProvider,  getHuddleClient,} from "@huddle01/huddle01-client";
+import { LoadingOutlined,PlusCircleTwoTone ,WechatOutlined,VideoCameraOutlined, EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
+import { Avatar,Result,message, Layout, Spin, Row, Col, Card,Skeleton, Image, Button, Input, Popover, Typography, Space } from 'antd';
 
+const { Meta } = Card;
 const { Header, Footer, Sider, Content } = Layout;
 const { Title, Text, Link } = Typography;
-
-
-import {
-  HuddleClientProvider,
-  getHuddleClient,
-} from "@huddle01/huddle01-client";
-
 const gridStyle = {
   width: '33.33%',
   textAlign: 'center',
@@ -385,7 +374,6 @@ class Player extends React.Component {
                     }}
                     cover={
                       <LiveStream />
-
                     }
                     actions={[
                       <VideoCameraOutlined key="videocamoutline" />,
@@ -418,17 +406,11 @@ extra={
     Share Stream
   </button>
 }
-/>
-                      
+/>             
                   </Card.Grid>
-
                 </Card>
-
-
               </Col>
               {/* {ipfsResponse} */}
-
-
               {!isLoading ? (
                 <>
                   <Col span={6} offset={1}> 
@@ -453,11 +435,8 @@ extra={
                         <div>
                           <Button onClick={this.connectWallet} type="button"
                             className="w-full items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600" size="large" block>Connect Wallet</Button>
-
                         </div>
-
                       }
-
                       <br />
                       <Space direction="horizontal" style={{ width: '100%', justifyContent: 'center' }}>
 
@@ -521,10 +500,7 @@ extra={
     <Card type="inner"  className="mt-4 rounded-md"  title="Inner Card title" extra={<a href="#">More</a>}>
       Inner Card content
     </Card>
-
-   
   </Card>
-
                         </div>
                   </Col>
                 </>

@@ -95,7 +95,6 @@ class Creater extends React.Component {
       ],
     };
   }
-
   
   componentDidMount() {
     this.getData();
@@ -313,8 +312,6 @@ class Creater extends React.Component {
     return (
       <>
         <Navbar />
-     
-
         <Layout>
           <Content
             className="site-layout"

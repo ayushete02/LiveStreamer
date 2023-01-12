@@ -164,12 +164,7 @@ class Navbar extends React.Component {
                 >
                   Social Chat
                 </a>
-                {/* <a
-                  href="/chat"
-                  className="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900"
-                >
-                  Pricing
-                </a> */}
+             
                 
               </nav>
             </div>

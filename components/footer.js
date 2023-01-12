@@ -4,17 +4,6 @@ import { Button, FloatButton,Popover, Card, Drawer } from 'antd';
 import { useAccount } from "wagmi";
 import { Chat } from "@pushprotocol/uiweb";
 
-
-// const Notification = async (props) => {
-
-//     const notifications = await PushAPI.user.getFeeds({
-//         user: 'eip155:5:0x7ED790A1Ac108b9A50e24f5c5E061df59e3673a7', // user address in CAIP
-//         env: 'staging'
-//       });
-//       console.log("Notifications: ", notifications);
-//       return notifications;
-// }
-
 export const Footer = () => {
   const [open, setOpen] = useState(false);
 
@@ -27,7 +16,6 @@ export const Footer = () => {
     SetNotification(notifications);
   };
 
-
   const showDrawer = () => {
     NotificationReceiver();
     setOpen(true);
@@ -38,7 +26,6 @@ export const Footer = () => {
   };
   return (
     <>
-
       <div className="bottom-10  z-45 right-40 mr-6 cursor-pointer fixed">
         <div onClick={showDrawer} className=" inline-flex relative h-4 w-4">
           <div className="px-5 py-7 bg-indigo-400 flex items-center justify-center text-center rounded-2xl shadow-lg">
@@ -51,10 +38,8 @@ export const Footer = () => {
         </div>
       </div>
 
-
       <Drawer  title="Push Notification ({0x7ED790A1Ac108b9A50e24f5c5E061df59e3673a7})" width={'700px'} placement="right" onClose={onClose} open={open}>
 
-      
           {notification.map((item, index) => {
             console.log(notification);
             return (
@@ -67,8 +52,6 @@ export const Footer = () => {
           })}
       </Drawer>
 
-
-        
       <Chat className='z-50'
         account={address} //user address
         supportAddress="0xC76139fcB9e4952CE9Fb3183C6c3af69534233FE" //support address

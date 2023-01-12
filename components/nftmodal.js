@@ -27,8 +27,6 @@ import { UploadOutlined, InboxOutlined } from '@ant-design/icons';
 const { Dragger } = Upload;
 const { Option } = Select;
 
-
-
 class Nftmodal extends React.Component {
   constructor(props) {
     super(props);

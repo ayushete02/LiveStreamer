@@ -1,12 +1,12 @@
 import React from 'react';
 import Navbar from '../components/navbar'
+import { Conversation } from '../components/xmtp/Conversation';
 const XMTPchat = () => {
   return (
     <div className='shadow h-screen overflow-hidden'>
          <Navbar/>
-        <div className='h-12 z-20  bg-white w-1/2 absolute' ></div>
-      <iframe src="https://xmtp-quickstart-react.vercel.app/" title="description" className=' m-auto' width='83%' height='100%'></iframe>
-    </div>
+     <Conversation/>
+       </div>
   );
 }
 
