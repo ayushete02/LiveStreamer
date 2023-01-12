@@ -46,7 +46,12 @@ Overall, LiveStreamer provides a unique and engaging experience for its users th
 
 # Installation
 
-1. Clone this repo by running `git clone https://github.com/ayushete02/LiveStreamer`
-2. `cd LiveStreamer`
-3. `npm install`
-4. `npm run dev`
+Clone this repo by running 
+```yaml
+git clone https://github.com/ayushete02/LiveStreamer ```
+```yaml
+`cd LiveStreamer```
+```yaml
+`npm install```
+```yaml
+`npm run dev```
