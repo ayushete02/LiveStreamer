@@ -48,10 +48,14 @@ Overall, LiveStreamer provides a unique and engaging experience for its users th
 
 Clone this repo by running 
 ```yaml
-git clone https://github.com/ayushete02/LiveStreamer ```
+git clone https://github.com/ayushete02/LiveStreamer
+```
 ```yaml
-`cd LiveStreamer```
+`cd LiveStreamer
+```
 ```yaml
-`npm install```
+`npm install
+```
 ```yaml
-`npm run dev```
+`npm run dev
+```
